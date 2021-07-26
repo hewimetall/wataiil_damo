@@ -1,0 +1,1074 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# ajk, 2014
+# eb5b5ee62bf6428e621432b9e62de6b8_d17f633, 2014
+# Alexey Trofimov <funkindy@gmail.com>, 2020
+# Andrey <talkerbox@live.com>, 2016
+# Eugene <eugene.mechanism@gmail.com>, 2014-2016
+# Mikalai Radchuk <radchuk.m@gmail.com>, 2016-2017
+# sergeybe <sergeybe@gmail.com>, 2020
+# Sergey Khalymon <sergiykhalimon@gmail.com>, 2015
+# Sergey Khalymon <sergiykhalimon@gmail.com>, 2015
+# Виктор Виктор <spam.vitek@gmail.com>, 2020
+# Мирон Левицкий <miron200504@gmail.com>, 2018
+# Михаил Герасимов, 2019
+# Sergey Mazanov <mvver@outlook.com>, 2021
+msgid ""
+msgstr ""
+"Project-Id-Version: Wagtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-26 18:32+0800\n"
+"PO-Revision-Date: 2021-05-17 17:38+0000\n"
+"Last-Translator: sergeybe <sergeybe@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/torchbox/wagtail/language/"
+"ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: apps.py:8
+msgid "Wagtail core"
+msgstr "Ядро Wagtail"
+
+#: blocks/field_block.py:102
+#, fuzzy
+#| msgid "Comment"
+msgid "Add Comment"
+msgstr "Комментарий"
+
+#: blocks/list_block.py:173 blocks/stream_block.py:641
+msgid "Move up"
+msgstr "Двигать вверх"
+
+#: blocks/list_block.py:174 blocks/stream_block.py:642
+msgid "Move down"
+msgstr "Двигать вниз"
+
+#: blocks/list_block.py:175 blocks/stream_block.py:643
+msgid "Duplicate"
+msgstr ""
+
+#: blocks/list_block.py:176 blocks/stream_block.py:644 wagtail_hooks.py:102
+msgid "Delete"
+msgstr "Удалить"
+
+#: blocks/list_block.py:177 blocks/stream_block.py:645 models.py:3166
+msgid "Add"
+msgstr "Добавить"
+
+#: blocks/static_block.py:22
+#, python-format
+msgid "%(label)s: this block has no options."
+msgstr "%(label)s: у этого блока нет опций."
+
+#: blocks/static_block.py:24
+msgid "This block has no options."
+msgstr "Этот блок не имеет опций."
+
+#: blocks/stream_block.py:146 blocks/stream_block.py:168
+#, python-format
+msgid "The minimum number of items is %d"
+msgstr "Минимальное количество элементов: %d"
+
+#: blocks/stream_block.py:149
+msgid "This field is required."
+msgstr "Требуется заполнить это поле."
+
+#: blocks/stream_block.py:153 blocks/stream_block.py:172
+#, python-format
+msgid "The maximum number of items is %d"
+msgstr "Максимальное количество элементов: %d"
+
+#: forms.py:8
+msgid "Password"
+msgstr "Пароль"
+
+#: forms.py:18
+msgid "The password you have entered is not correct. Please try again."
+msgstr "Введённый вами пароль неверный. Попробуйте еще раз."
+
+#: forms.py:24
+msgid "Comment"
+msgstr "Комментарий"
+
+#: log_actions.py:52
+#, python-format
+msgid "Unknown %(action)s"
+msgstr "Неизвестное %(action)s"
+
+#: models.py:176
+msgid "hostname"
+msgstr "имя хоста"
+
+#: models.py:178
+msgid "port"
+msgstr "порт"
+
+#: models.py:181
+msgid ""
+"Set this to something other than 80 if you need a specific port number to "
+"appear in URLs (e.g. development on port 8000). Does not affect request "
+"handling (so port forwarding still works)."
+msgstr ""
+"Укажите какой-нибудь отличный от 80 порт, если вам нужен конкретный номер "
+"порта в URL-адресе (например, разработка на порту 8000). Не влияет на "
+"обработку запроса (так что форвардинг портов продолжает работать)."
+
+#: models.py:186
+msgid "site name"
+msgstr "имя сайта"
+
+#: models.py:189
+msgid "Human-readable name for the site."
+msgstr "Человеко-понятное имя для сайта."
+
+#: models.py:191
+msgid "root page"
+msgstr "корневая страница"
+
+#: models.py:194
+msgid "is default site"
+msgstr "сайт по умолчанию"
+
+#: models.py:197
+msgid ""
+"If true, this site will handle requests for all other hostnames that do not "
+"have a site entry of their own"
+msgstr ""
+"Если выбрано, этот сайт будет обрабатывать запросы для всех имеющихся имен "
+"хостов, не закрепленных за другими сайтами"
+
+#: models.py:205
+msgid "site"
+msgstr "сайт"
+
+#: models.py:206
+msgid "sites"
+msgstr "сайты"
+
+#: models.py:212
+msgid "default"
+msgstr "по умолчанию"
+
+#: models.py:286
+#, python-format
+msgid ""
+"%(hostname)s is already configured as the default site. You must unset that "
+"before you can save this site as default."
+msgstr ""
+"%(hostname)s уже настроен как сайт по умолчанию. Вы должны сначала отключить "
+"эту настройку у него, прежде, чем вы можете сохранить этот сайт по умолчанию."
+
+#: models.py:739
+msgid "title"
+msgstr "заголовок"
+
+#: models.py:741
+msgid "The page title as you'd like it to be seen by the public"
+msgstr "Заголовок страницы видимый всем"
+
+#: models.py:749
+msgid "slug"
+msgstr "слаг"
+
+#: models.py:752
+msgid ""
+"The name of the page as it will appear in URLs e.g http://domain.com/blog/"
+"[my-slug]/"
+msgstr ""
+"Имя страницы, которое будет отображаться в URL, например http://domain.com/"
+"blog/[my-slug]/"
+
+#: models.py:756 models.py:3932 models.py:4540 models.py:4755
+msgid "content type"
+msgstr "тип содержимого"
+
+#: models.py:760 models.py:2005
+msgid "live"
+msgstr "опубликовано"
+
+#: models.py:762
+msgid "has unpublished changes"
+msgstr "имеет неопубликованные изменения"
+
+#: models.py:766
+msgid "URL path"
+msgstr "Путь URL"
+
+#: models.py:769
+msgid "owner"
+msgstr "владелец"
+
+#: models.py:778
+#, fuzzy
+#| msgid "title"
+msgid "title tag"
+msgstr "заголовок"
+
+#: models.py:781
+msgid ""
+"The name of the page displayed on search engine results as the clickable "
+"headline."
+msgstr ""
+"Название страницы, отображаемое в результатах поисковой системы в виде заголовка с возможностью нажатия "
+"."
+
+#: models.py:786
+msgid "show in menus"
+msgstr "показывать в меню. "
+
+#: models.py:788
+msgid ""
+"Whether a link to this page will appear in automatically generated menus"
+msgstr ""
+"Должна ли ссылка на эту страницу отображаться в автоматически генерируемых "
+"меню"
+
+#: models.py:791
+#, fuzzy
+#| msgid "view restriction"
+msgid "meta description"
+msgstr "ограничение на просмотр"
+
+#: models.py:793
+msgid ""
+"The descriptive text displayed underneath a headline in search engine "
+"results."
+msgstr "Описательный текст, отображаемый под заголовком в поисковой системе."
+
+#: models.py:797
+msgid "go live date/time"
+msgstr "дата/время публикации"
+
+#: models.py:802
+msgid "expiry date/time"
+msgstr "дата/время истечения"
+
+#: models.py:806 models.py:1990
+msgid "expired"
+msgstr "истекло"
+
+#: models.py:808
+msgid "locked"
+msgstr "заблокировано"
+
+#: models.py:809
+msgid "locked at"
+msgstr "заблокирован в"
+
+#: models.py:812
+msgid "locked by"
+msgstr "заблокирован"
+
+#: models.py:821
+msgid "first published at"
+msgstr "впервые опубликовано"
+
+#: models.py:827
+msgid "last published at"
+msgstr "последний раз публиковалась"
+
+#: models.py:832
+msgid "latest revision created at"
+msgstr "последняя версия создана"
+
+#: models.py:839
+msgid "live revision"
+msgstr "опубликованная версия"
+
+#: models.py:1000
+msgid "This slug is already in use"
+msgstr "Этот слаг уже используется"
+
+#: models.py:1992
+msgid "scheduled"
+msgstr "запланированное"
+
+#: models.py:1994
+msgid "in moderation"
+msgstr "на модерации"
+
+#: models.py:1996
+msgid "draft"
+msgstr "черновик"
+
+#: models.py:1999
+msgid "live + scheduled"
+msgstr "размещена + запланированна"
+
+#: models.py:2001
+msgid "live + in moderation"
+msgstr "опубликовано + на модерации"
+
+#: models.py:2003
+msgid "live + draft"
+msgstr "опубликовано + черновик"
+
+#: models.py:2606
+msgid "Default"
+msgstr "По умолчанию"
+
+#: models.py:2884 models.py:2904 models.py:3182 models.py:3701 models.py:3880
+#: models.py:4231
+msgid "page"
+msgstr "страница"
+
+#: models.py:2885
+msgid "pages"
+msgstr "страницы"
+
+#: models.py:2906
+msgid "submitted for moderation"
+msgstr "добавлено на модерацию"
+
+#: models.py:2910 models.py:4234
+msgid "created at"
+msgstr "создано"
+
+#: models.py:2912
+msgid "user"
+msgstr "пользователь"
+
+#: models.py:2915
+msgid "content JSON"
+msgstr "сожержимое JSON"
+
+#: models.py:2917
+msgid "approved go live at"
+msgstr "подтверждено к публикации"
+
+#: models.py:3161 models.py:4524
+msgid "page revision"
+msgstr "версия страницы"
+
+#: models.py:3162
+msgid "page revisions"
+msgstr "версии страницы"
+
+#: models.py:3166
+msgid "Add/edit pages you own"
+msgstr "Добавить/редактировать свои страницы"
+
+#: models.py:3167
+msgid "Edit"
+msgstr "Редактировать"
+
+#: models.py:3167
+msgid "Edit any page"
+msgstr "Редактировать любую страницу"
+
+#: models.py:3168 wagtail_hooks.py:103
+msgid "Publish"
+msgstr "Опубликовать"
+
+#: models.py:3168
+msgid "Publish any page"
+msgstr "Опубликовать любую страницу"
+
+#: models.py:3169
+msgid "Bulk delete"
+msgstr "Массовое удаление"
+
+#: models.py:3169
+msgid "Delete pages with children"
+msgstr "Удалить вместе с дочерними страницами"
+
+#: models.py:3170 wagtail_hooks.py:107
+msgid "Lock"
+msgstr "Заблокировать"
+
+#: models.py:3170
+msgid "Lock/unlock pages you've locked"
+msgstr "Ваши заблокированные/разблокированные страницы"
+
+#: models.py:3171 wagtail_hooks.py:108
+msgid "Unlock"
+msgstr "Разблокировать"
+
+#: models.py:3171
+msgid "Unlock any page"
+msgstr "Разблокировать любую страницу"
+
+#: models.py:3181 models.py:3843
+msgid "group"
+msgstr "группа"
+
+#: models.py:3184
+msgid "permission type"
+msgstr "тип прав"
+
+#: models.py:3191
+msgid "group page permission"
+msgstr "право на страницу у группы"
+
+#: models.py:3192
+msgid "group page permissions"
+msgstr "права на страницу у группы"
+
+#: models.py:3606
+msgid "Public"
+msgstr "Публично"
+
+#: models.py:3607
+msgid "Private, accessible to logged-in users"
+msgstr "Приватно, доступно для зарегистрированных пользователей"
+
+#: models.py:3608
+msgid "Private, accessible with the following password"
+msgstr "Приватно, доступно со следующим паролем"
+
+#: models.py:3609
+msgid "Private, accessible to users in specific groups"
+msgstr "Приватно, доступно для пользователей из указанных групп"
+
+#: models.py:3614
+msgid "password"
+msgstr "пароль"
+
+#: models.py:3615 models.py:4155
+msgid "groups"
+msgstr "группы"
+
+#: models.py:3653
+msgid "view restriction"
+msgstr "ограничение на просмотр"
+
+#: models.py:3654
+msgid "view restrictions"
+msgstr "ограничения на просмотр"
+
+#: models.py:3707
+msgid "page view restriction"
+msgstr "ограничение на просмотр страницы"
+
+#: models.py:3708
+msgid "page view restrictions"
+msgstr "ограничения на просмотр страниц"
+
+#: models.py:3728 models.py:3801 models.py:3816 models.py:3849
+msgid "collection"
+msgstr "коллекция"
+
+#: models.py:3736
+msgid "collection view restriction"
+msgstr "ограничение на просмотр коллекции"
+
+#: models.py:3737
+msgid "collection view restrictions"
+msgstr "ограничения на просмотр коллекции"
+
+#: models.py:3744 models.py:3929 models.py:4083
+msgid "name"
+msgstr "имя"
+
+#: models.py:3802
+msgid "collections"
+msgstr "коллекции"
+
+#: models.py:3855
+msgid "permission"
+msgstr "право доступа"
+
+#: models.py:3873
+msgid "group collection permission"
+msgstr "право доступа к коллекции у группы"
+
+#: models.py:3874
+msgid "group collection permissions"
+msgstr "права доступа к коллекции у группы"
+
+#: models.py:3888 models.py:4150 models.py:4232
+msgid "workflow"
+msgstr "рабочий процесс"
+
+#: models.py:3907
+msgid "workflow page"
+msgstr "страница рабочего процесса"
+
+#: models.py:3908
+msgid "workflow pages"
+msgstr "страницы рабочего процесса"
+
+#: models.py:3912
+msgid "workflow_tasks"
+msgstr "workflow_tasks"
+
+#: models.py:3914 models.py:4073 models.py:4525
+msgid "task"
+msgstr "задача"
+
+#: models.py:3919
+msgid "workflow task order"
+msgstr "порядок задачи рабочего процесса"
+
+#: models.py:3920
+msgid "workflow task orders"
+msgstr "порядки задач рабочего процесса"
+
+#: models.py:3936 models.py:4084
+msgid "active"
+msgstr "активный"
+
+#: models.py:3937
+msgid ""
+"Active tasks can be added to workflows. Deactivating a task does not remove "
+"it from existing workflows."
+msgstr ""
+"Активные задачи могут быть добавлены в рабочий процесс. Неактивная задача не "
+"удаляется из существующего рабочего процесса."
+
+#: models.py:4074
+msgid "tasks"
+msgstr "задачи"
+
+#: models.py:4085
+msgid ""
+"Active workflows can be added to pages. Deactivating a workflow does not "
+"remove it from existing pages."
+msgstr ""
+"Активные рабочие процессы могут быть добавлены к страницам. Деактивация "
+"рабочего процесса не удаляет её из существующих страниц."
+
+#: models.py:4151
+msgid "workflows"
+msgstr "рабочие процессы"
+
+#: models.py:4155
+msgid ""
+"Pages at this step in a workflow will be moderated or approved by these "
+"groups of users"
+msgstr ""
+"Страницы на этом шаге в рабочем процессе будут промодерированы и "
+"утвержденный этой группой пользователей"
+
+#: models.py:4188
+msgid "Request changes"
+msgstr "Запрос изменений"
+
+#: models.py:4189 wagtail_hooks.py:109
+msgid "Approve"
+msgstr "Одобрить"
+
+#: models.py:4190
+msgid "Approve with comment"
+msgstr "Одобрить с комментарием"
+
+#: models.py:4203
+msgid "Members of the chosen Wagtail Groups can approve this task"
+msgstr "Члены выбранных Wagtail групп могут одобрить эту задачу"
+
+#: models.py:4206
+msgid "Group approval task"
+msgstr "Группа одобрения задачи"
+
+#: models.py:4207
+msgid "Group approval tasks"
+msgstr "Группа одобрения задач"
+
+#: models.py:4225 models.py:4516
+msgid "In progress"
+msgstr "В ходе выполнения"
+
+#: models.py:4226 models.py:4517 wagtail_hooks.py:109
+msgid "Approved"
+msgstr "Одобрено"
+
+#: models.py:4227
+msgid "Needs changes"
+msgstr "Нужные изменения"
+
+#: models.py:4228 models.py:4520
+msgid "Cancelled"
+msgstr "Отменено"
+
+#: models.py:4233 models.py:4526
+msgid "status"
+msgstr "статус"
+
+#: models.py:4236
+msgid "requested by"
+msgstr "запрощен"
+
+#: models.py:4243
+msgid "current task state"
+msgstr "текущее состояние задачи"
+
+#: models.py:4256
+msgid ""
+"There may only be one in progress or needs changes workflow state per page."
+msgstr ""
+"Только один прогресс выполнения или нужно изменить состояние для каждой "
+"страницы."
+
+#: models.py:4263
+#, python-brace-format
+msgid "Workflow '{0}' on Page '{1}': {2}"
+msgstr "Процесс выполнения '{0}' на Странице '{1}': {2} "
+
+#: models.py:4443
+msgid "Not started"
+msgstr "Не запущен"
+
+#: models.py:4491
+msgid "Workflow state"
+msgstr "Состояние процесса выполнения"
+
+#: models.py:4492
+msgid "Workflow states"
+msgstr "Состояния процесса выполнения"
+
+#: models.py:4518 wagtail_hooks.py:110
+msgid "Rejected"
+msgstr "Отклонено"
+
+#: models.py:4519
+msgid "Skipped"
+msgstr "Пропущено"
+
+#: models.py:4523
+msgid "workflow state"
+msgstr "состояние процесса выполнения"
+
+#: models.py:4527
+msgid "started at"
+msgstr "запущен в"
+
+#: models.py:4528
+msgid "finished at"
+msgstr "завершен в"
+
+#: models.py:4531
+msgid "finished by"
+msgstr "закончен"
+
+#: models.py:4560
+#, python-brace-format
+msgid "Task '{0}' on Page Revision '{1}': {2}"
+msgstr "Задача '{0}' на Ревизии Страницы '{1}': {2}"
+
+#: models.py:4697
+msgid "Task state"
+msgstr "Статус задачи"
+
+#: models.py:4698
+msgid "Task states"
+msgstr "Статусы задачи"
+
+#: models.py:4763
+msgid "timestamp (UTC)"
+msgstr "отметка времени (UTC)"
+
+#: models.py:4784
+msgid "log entry"
+msgstr "запись в журнале"
+
+#: models.py:4785
+msgid "log entries"
+msgstr "записи в журнале"
+
+#: models.py:4796
+msgid "The log action '{}' has not been registered."
+msgstr ""
+
+#: models.py:4815
+#, python-format
+msgid "user %(id)d (deleted)"
+msgstr "пользователь %(id)d (удаленный)"
+
+#: models.py:4824
+msgid "system"
+msgstr "система"
+
+#: models.py:4877
+msgid "page log entry"
+msgstr "страница записи журнала"
+
+#: models.py:4878
+msgid "page log entries"
+msgstr "страница записей журнала"
+
+#: models.py:4920
+#, fuzzy
+#| msgid "Comment"
+msgid "comment"
+msgstr "Комментарий"
+
+#: models.py:4921
+#, fuzzy
+#| msgid "Comment"
+msgid "comments"
+msgstr "Комментарий"
+
+#: models.py:4951
+#, fuzzy
+#| msgid "Comment"
+msgid "comment reply"
+msgstr "Комментарий"
+
+#: models.py:4952
+msgid "comment replies"
+msgstr ""
+
+#: templates/wagtailcore/login.html:5 templates/wagtailcore/login.html:8
+#: templates/wagtailcore/login.html:21
+msgid "Log in"
+msgstr "Войти"
+
+#: templates/wagtailcore/login.html:11
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+"Ваши имя пользователя и пароль не подходят. Пожалуйста, попробуйте еще раз."
+
+#: templates/wagtailcore/login.html:15
+msgid ""
+"Your account doesn't have access to this page. To proceed, please log in "
+"with an account that has access."
+msgstr ""
+"Ваш аккаунт не имеет доступа к этой странице. Для просмотра, пожалуйста, "
+"войдите, используя аккаунт, который имеет доступ."
+
+#: templates/wagtailcore/password_required.html:5
+#: templates/wagtailcore/password_required.html:8
+msgid "Password required"
+msgstr "Требуется пароль"
+
+#: templates/wagtailcore/password_required.html:10
+msgid "You need a password to access this page."
+msgstr "Вам нужен пароль для доступа к этой странице."
+
+#: templates/wagtailcore/password_required.html:15
+msgid "Continue"
+msgstr "Продолжить"
+
+#: tests/test_locale_model.py:57 tests/test_utils.py:193
+msgid "English"
+msgstr "Английский"
+
+#: tests/test_locale_model.py:57
+msgid "French"
+msgstr "Французский"
+
+#: tests/test_utils.py:194
+msgid "German"
+msgstr "Немецкий"
+
+#: wagtail_hooks.py:90
+#, python-format
+msgid "%(count)s descendant collection"
+msgid_plural "%(count)s descendant collections"
+msgstr[0] "%(count)s коллекция потомков"
+msgstr[1] "%(count)s коллекции потомков"
+msgstr[2] "%(count)s коллекций потомков"
+msgstr[3] "%(count)s коллекции потомков"
+
+#: wagtail_hooks.py:100
+msgid "Create"
+msgstr "Создать"
+
+#: wagtail_hooks.py:100
+msgid "Created"
+msgstr "Создан"
+
+#: wagtail_hooks.py:101
+msgid "Save draft"
+msgstr "Сохранить черновик"
+
+#: wagtail_hooks.py:101
+msgid "Draft saved"
+msgstr "Черновик сохранен"
+
+#: wagtail_hooks.py:102
+msgid "Deleted"
+msgstr "Удален"
+
+#: wagtail_hooks.py:103
+msgid "Published"
+msgstr "Опубликовано"
+
+#: wagtail_hooks.py:104
+msgid "Publish scheduled draft"
+msgstr "Опубликовать запланированный черновик"
+
+#: wagtail_hooks.py:104
+msgid "Published scheduled draft"
+msgstr "Опубликованный запланированный черновик"
+
+#: wagtail_hooks.py:105
+msgid "Unpublish"
+msgstr "Отменить публикацию"
+
+#: wagtail_hooks.py:105
+msgid "Unpublished"
+msgstr "Снято с публикации"
+
+#: wagtail_hooks.py:106
+msgid "Unpublish scheduled draft"
+msgstr "Отменить публикацию запланированного черновика"
+
+#: wagtail_hooks.py:106
+msgid "Unpublished scheduled draft"
+msgstr "Снятый с публикации запланированный черновик"
+
+#: wagtail_hooks.py:107
+msgid "Locked"
+msgstr "Заблокировано"
+
+#: wagtail_hooks.py:108
+msgid "Unlocked"
+msgstr "Разблокировано"
+
+#: wagtail_hooks.py:110
+msgid "Reject"
+msgstr "Отклонить"
+
+#: wagtail_hooks.py:114
+#, python-format
+msgid ""
+"Reverted to previous revision with id %(revision_id)s from %(created_at)s"
+msgstr "Возвращен к версии %(revision_id)s от %(created_at)s"
+
+#: wagtail_hooks.py:119
+msgid "Reverted to previous revision"
+msgstr "Возвращен к предыдущей версии"
+
+#: wagtail_hooks.py:123
+#, python-format
+msgid "Copied from %(title)s"
+msgstr "Скопирован с %(title)s"
+
+#: wagtail_hooks.py:127
+msgid "Copied"
+msgstr "Скопирован"
+
+#: wagtail_hooks.py:131
+#, python-format
+msgid "Created an alias of %(title)s"
+msgstr "Создан псевдоним %(title)s"
+
+#: wagtail_hooks.py:135
+msgid "Created an alias"
+msgstr "Создан псевдоним"
+
+#: wagtail_hooks.py:139
+#, python-format
+msgid "Converted the alias '%(title)s' into a regular page"
+msgstr "Сконвертирован псевдоним '%(title)s' в обычную страницу"
+
+#: wagtail_hooks.py:143
+msgid "Converted an alias into a regular page"
+msgstr "Сконвертирован псевдоним в обычную страницу"
+
+#: wagtail_hooks.py:147
+#, python-format
+msgid "Moved from '%(old_parent)s' to '%(new_parent)s'"
+msgstr "Перемещен из '%(old_parent)s' в '%(new_parent)s'"
+
+#: wagtail_hooks.py:152
+msgid "Moved"
+msgstr "Перемещен"
+
+#: wagtail_hooks.py:156
+#, python-format
+msgid "Reordered under '%(parent)s'"
+msgstr ""
+
+#: wagtail_hooks.py:160
+msgid "Reordered"
+msgstr ""
+
+#: wagtail_hooks.py:165
+#, python-format
+msgid ""
+"Revision %(revision_id)s from %(created_at)s scheduled for publishing at "
+"%(go_live_at)s."
+msgstr ""
+"Версия %(revision_id)s от %(created_at)s запланирована к публикации "
+"%(go_live_at)s."
+
+#: wagtail_hooks.py:171
+#, python-format
+msgid "Page scheduled for publishing at %(go_live_at)s"
+msgstr "Страница запланирована к публикации %(go_live_at)s"
+
+#: wagtail_hooks.py:175
+msgid "Page scheduled for publishing"
+msgstr "Страница запланирована к публикации"
+
+#: wagtail_hooks.py:180
+#, python-format
+msgid ""
+"Revision %(revision_id)s from %(created_at)s unscheduled from publishing at "
+"%(go_live_at)s."
+msgstr ""
+"Версия %(revision_id)s от %(created_at)s больше не запланирована к "
+"публикации %(go_live_at)s."
+
+#: wagtail_hooks.py:186
+#, python-format
+msgid "Page unscheduled for publishing at %(go_live_at)s"
+msgstr "Страница снята с расписания публикации на %(go_live_at)s."
+
+#: wagtail_hooks.py:190
+msgid "Page unscheduled from publishing"
+msgstr "Страница снята с расписания публикации"
+
+#: wagtail_hooks.py:194
+#, python-format
+msgid "Added the '%(restriction)s' view restriction"
+msgstr "Добавлено '%(restriction)s' ограничение на просмотр"
+
+#: wagtail_hooks.py:198
+msgid "Added view restriction"
+msgstr "Добавленно ограничение просмотра"
+
+#: wagtail_hooks.py:202
+#, python-format
+msgid "Updated the view restriction to '%(restriction)s'"
+msgstr "Обновлены ограничение просмотра в '%(restriction)s'"
+
+#: wagtail_hooks.py:206
+msgid "Updated view restriction"
+msgstr "Обновлены ограничение просмотра"
+
+#: wagtail_hooks.py:210
+#, python-format
+msgid "Removed the '%(restriction)s' view restriction"
+msgstr "Удалено '%(restriction)s' запрет просмотра"
+
+#: wagtail_hooks.py:214
+msgid "Removed view restriction"
+msgstr "Удалено ограничение просмотра"
+
+#: wagtail_hooks.py:218
+#, python-format
+msgid "Renamed from '%(old)s' to '%(new)s'"
+msgstr "Переименован из '%(old)s' в '%(new)s'"
+
+#: wagtail_hooks.py:223
+msgid "Renamed"
+msgstr "Переименован"
+
+#: wagtail_hooks.py:225
+msgid "Rename"
+msgstr "Переименовать"
+
+#: wagtail_hooks.py:226
+msgid "Revert"
+msgstr "Вернуть назад"
+
+#: wagtail_hooks.py:227
+msgid "Copy"
+msgstr "Копировать"
+
+#: wagtail_hooks.py:228
+msgid "Create alias"
+msgstr "Создать псевдоним"
+
+#: wagtail_hooks.py:229
+msgid "Convert alias into regular page"
+msgstr "Сконвертировать псевдоним в обычную страницу"
+
+#: wagtail_hooks.py:230
+msgid "Move"
+msgstr "Переместить"
+
+#: wagtail_hooks.py:231
+msgid "Reorder"
+msgstr ""
+
+#: wagtail_hooks.py:232
+msgid "Schedule publication"
+msgstr "Запланированная публикация"
+
+#: wagtail_hooks.py:233
+msgid "Unschedule publication"
+msgstr "Внеплановая публикация "
+
+#: wagtail_hooks.py:234
+msgid "Add view restrictions"
+msgstr "Добавить ограничение просмотра"
+
+#: wagtail_hooks.py:235
+msgid "Update view restrictions"
+msgstr "Обновить ограничения просмотра"
+
+#: wagtail_hooks.py:236
+msgid "Remove view restrictions"
+msgstr "Убрать ограничения просмотра"
+
+#: wagtail_hooks.py:243
+#, python-format
+msgid "'%(workflow)s' started. Next step '%(task)s'"
+msgstr "'%(workflow)s' запущен. Следующий шаг '%(task)s'"
+
+#: wagtail_hooks.py:248
+msgid "Workflow started"
+msgstr "Рабочий процесс запущен"
+
+#: wagtail_hooks.py:253
+#, python-format
+msgid "Approved at '%(task)s'. Next step '%(next_task)s'"
+msgstr "Утверждено на шаге '%(task)s'. Следующий шаг '%(next_task)s'"
+
+#: wagtail_hooks.py:258
+#, python-format
+msgid "Approved at '%(task)s'. '%(workflow)s' complete"
+msgstr "Утверждено на шаге %(task)s. Рабочий процесс %(workflow)s окончен"
+
+#: wagtail_hooks.py:263
+msgid "Workflow task approved"
+msgstr "Задача рабочего процесса"
+
+#: wagtail_hooks.py:267
+#, python-format
+msgid "Rejected at '%(task)s'. Changes requested"
+msgstr "Отклонено на задаче '%(task)s'. Запрошены изменения"
+
+#: wagtail_hooks.py:271
+msgid "Workflow task rejected. Workflow complete"
+msgstr "Задача рабочего процесса отклонена. Процесс завершен."
+
+#: wagtail_hooks.py:275
+#, python-format
+msgid "Resubmitted '%(task)s'. Workflow resumed'"
+msgstr "Задача '%(task)s' выполнена еще раз. Рабочий процесс возобновлен."
+
+#: wagtail_hooks.py:279
+msgid "Workflow task resubmitted. Workflow resumed"
+msgstr "Задача выполнена еще раз. Рабочий процесс возобновлен."
+
+#: wagtail_hooks.py:283
+#, python-format
+msgid "Cancelled '%(workflow)s' at '%(task)s'"
+msgstr "Отменен '%(workflow)s' в '%(task)s'"
+
+#: wagtail_hooks.py:288
+msgid "Workflow cancelled"
+msgstr "Рабочий процесс отменен."
+
+#: wagtail_hooks.py:290
+msgid "Workflow: start"
+msgstr "Рабочий процесс: запустить"
+
+#: wagtail_hooks.py:291
+msgid "Workflow: approve task"
+msgstr "Рабочий процесс: утвердить задачу"
+
+#: wagtail_hooks.py:292
+msgid "Workflow: reject task"
+msgstr "Рабочий процесс: отклонить задачу"
+
+#: wagtail_hooks.py:293
+msgid "Workflow: resume task"
+msgstr "Рабочий процесс: возобновить задачу"
+
+#: wagtail_hooks.py:294
+msgid "Workflow: cancel"
+msgstr "Рабочий процесс: отменен"

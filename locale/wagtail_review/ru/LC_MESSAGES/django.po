@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-26 05:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: forms.py:46
+msgid "Please select one or more reviewers."
+msgstr "Выберите одного или нескольких рецензентов"
+
+#: models.py:30 templates/wagtail_review/admin/dashboard.html:35
+msgid "Open"
+msgstr "Открыто"
+
+#: models.py:31 templates/wagtail_review/admin/dashboard.html:35
+msgid "Closed"
+msgstr "Закрыто"
+
+#: templates/wagtail_review/admin/audit_trail.html:19
+#, python-format
+msgid "Review requested by %(submitter)s at %(datetime)s"
+msgstr "Проверка запрошена %(submitter)s в %(datetime)s"
+
+#: templates/wagtail_review/admin/audit_trail.html:24
+msgid "Reviewer"
+msgstr "Рецензент"
+
+#: templates/wagtail_review/admin/audit_trail.html:25
+msgid "Response"
+msgstr "Ответ"
+
+#: templates/wagtail_review/admin/audit_trail.html:26
+msgid "Date"
+msgstr "Дата"
+
+#: templates/wagtail_review/admin/audit_trail.html:27
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/wagtail_review/admin/audit_trail.html:42
+msgid "Awaiting response"
+msgstr "Ожидание ответа"
+
+#: templates/wagtail_review/admin/audit_trail.html:52
+msgid "View page"
+msgstr "Просмотр страницы"
+
+#: templates/wagtail_review/admin/audit_trail.html:55
+msgid "Edit page"
+msgstr "Редактировать страницу"
+
+#: templates/wagtail_review/admin/audit_trail.html:61
+msgid "Reopen"
+msgstr "Переоткрыть"
+
+#: templates/wagtail_review/admin/audit_trail.html:68
+msgid "Close"
+msgstr "Закрыть"
+
+#: templates/wagtail_review/admin/audit_trail.html:75
+msgid "Close and publish"
+msgstr "Закрыть и опубликовать"
+
+#: templates/wagtail_review/admin/dashboard.html:11
+msgid "Page"
+msgstr "Страница"
+
+#: templates/wagtail_review/admin/dashboard.html:18
+msgid "Last review requested at"
+msgstr "Последняя проверка запрошен на"
+
+#: templates/wagtail_review/admin/dashboard.html:19
+msgid "Status"
+msgstr "Статус"
+
+#: templates/wagtail_review/create_review.html:2 wagtail_hooks.py:33
+msgid "Submit for review"
+msgstr "Отправить на проверку"
+
+#: templates/wagtail_review/create_review.html:45
+msgid "Start review"
+msgstr "Начать проверку"
+
+
+#: templates/wagtail_review/email/request_review_subject.txt:3
+#, python-format
+msgid "Review request: %(page_title)s"
+msgstr "Запрос на проверку: %(page_title)s"
+
+#: templates/wagtail_review/email/response_received.txt:5
+#, python-format
+msgid "%(reviewer)s has approved the page \"%(page_title)s\"."
+msgstr "%(reviewer)s одобрил страницу %(page_title)s "
+
+#: templates/wagtail_review/email/response_received.txt:7
+#, python-format
+msgid "%(reviewer)s has commented on the page \"%(page_title)s\"."
+msgstr "%(reviewer)s прокомментировал на странице \"%(page_title)s\"."
+
+#: templates/wagtail_review/email/response_received.txt:9
+msgid "Comment:"
+msgstr "Коммент"
+
+#: templates/wagtail_review/email/response_received_subject.txt:3
+#, python-format
+msgid "Response received from %(reviewer)s on: %(page_title)s"
+msgstr "Ответ получен от %(reviewer)s  на: %(page_title)s"
+
+#: views/admin.py:99
+msgid "Review dashboard"
+msgstr "Страница проверки"
+
+#: views/admin.py:108
+msgid "Audit trail"
+msgstr "След аудита"
+
+#: views/admin.py:185
+msgid "The review has been closed."
+msgstr "Обзор закрыт"
+
+#: views/admin.py:202
+msgid "The review has been closed and the page published."
+msgstr "Проверка была закрыта, а страница опубликована."
+
+#: views/admin.py:219
+msgid "The review has been reopened."
+msgstr "Проверка открыта повторно."
+
+#: wagtail_hooks.py:88
+#, python-brace-format
+msgid "Page '{0}' has been submitted for review."
+msgstr "Страница '{0}' отправлена на проверку"
+
+#: wagtail_hooks.py:110
+msgid "Reviews"
+msgstr "Проверки"
