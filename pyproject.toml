@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "wagtail-bootstrap-blog"
+version = "0.1.0"
+description = ""
+authors = ["Ваше Имя <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "*"
+wagtail = "*"
+django-extensions = "*"
+wagtail-markdown = "*"
+Pygments = "*"
+wagtail-django-recaptcha="1.0"
+django-crispy-forms="1.10.0"
+wagtailmenus="3.0.2"
+wagtail-metadata="3.3.1"
+
+django-contrib-comments="1.9.2"
+emoji="0.6.0"
+dj-database-url = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
