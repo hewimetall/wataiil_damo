@@ -123,6 +123,18 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "django-debug-toolbar"
+version = "3.2.1"
+description = "A configurable set of panels that display various debug information about the current request/response."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Django = ">=2.2"
+sqlparse = ">=0.2.0"
+
+[[package]]
 name = "django-extensions"
 version = "3.1.3"
 description = "Extensions for Django"
@@ -314,6 +326,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "psycopg2"
+version = "2.9.1"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "pygments"
 version = "2.9.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -378,6 +398,14 @@ description = "A non-validating SQL parser."
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "swapper"
+version = "1.1.2.post1"
+description = "The unofficial Django swappable models API."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "tablib"
@@ -485,6 +513,18 @@ Markdown = ">=3,<4"
 Wagtail = ">=2.0"
 
 [[package]]
+name = "wagtail-marketing-addons"
+version = "0.6"
+description = "A Wagtail add-on for supporting marketeer's in daily activities"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+doc = ["mkdocs", "pymdown-extensions"]
+test = ["pytest", "pytest-cov", "pytest-django", "pytest-pythonpath", "coverage", "factory-boy", "psycopg2-binary (>=2.5.4)", "tox", "flake8", "isort"]
+
+[[package]]
 name = "wagtail-metadata"
 version = "3.3.1"
 description = "A tool to assist with metadata for social media."
@@ -494,6 +534,59 @@ python-versions = ">=3"
 
 [package.dependencies]
 wagtail = ">=2.0,<3.0"
+
+[[package]]
+name = "wagtail-review"
+version = "0.3"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.dependencies]
+swapper = ">=1.1,<1.2"
+
+[package.source]
+type = "git"
+url = "https://github.com/hewimetall/wagtail-review.git"
+reference = "main"
+resolved_reference = "c118af9fac6711e15277c94ce0af41dc2115a72f"
+
+[[package]]
+name = "wagtail-sharing"
+version = "2.5.1"
+description = "Easier sharing of Wagtail drafts"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+wagtail = ">=2.7,<3"
+
+[package.extras]
+testing = ["coverage (>=3.7.0)"]
+
+[[package]]
+name = "wagtailmedia"
+version = "0.7.1"
+description = "A module for Wagtail that provides functionality similar to wagtail.documents module, but for audio and video files."
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.dependencies]
+wagtail = ">=2.7"
+
+[package.extras]
+testing = ["mock (>=1.0.0)", "coverage (>=3.7.0)", "flake8 (>=3.6.0)", "isort (==5.6.4)", "tox (==3.9.0)", "psycopg2-binary (<2.9)", "django-redis-cache"]
+
+[package.source]
+type = "git"
+url = "https://github.com/hewimetall/wagtailmedia.git"
+reference = "main"
+resolved_reference = "cffc9e8a7daa9e4e0ea5a6fb29daad4f5a0dfb43"
 
 [[package]]
 name = "wagtailmenus"
@@ -560,7 +653,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "36052f803aa43208b2499981a2f09cfdf7e251af009ce2dceff2f3aea8d1a70f"
+content-hash = "af39c81a217dde25e5832887d8195f30a2c848ed90c0215090875c4ac2736698"
 
 [metadata.files]
 anyascii = [
@@ -607,6 +700,10 @@ django-contrib-comments = [
 django-crispy-forms = [
     {file = "django-crispy-forms-1.10.0.tar.gz", hash = "sha256:d3f808d20cafe20fd38a49a47e72db1fd519fcf31bef4f47f008619336a3ebff"},
     {file = "django_crispy_forms-1.10.0-py3-none-any.whl", hash = "sha256:92ed3fdc52c08d21d60adbb9de24e432c590e66e894f43cee0974fc959209976"},
+]
+django-debug-toolbar = [
+    {file = "django-debug-toolbar-3.2.1.tar.gz", hash = "sha256:a5ff2a54f24bf88286f9872836081078f4baa843dc3735ee88524e89f8821e33"},
+    {file = "django_debug_toolbar-3.2.1-py3-none-any.whl", hash = "sha256:e759e63e3fe2d3110e0e519639c166816368701eab4a47fed75d7de7018467b9"},
 ]
 django-extensions = [
     {file = "django-extensions-3.1.3.tar.gz", hash = "sha256:5f0fea7bf131ca303090352577a9e7f8bfbf5489bd9d9c8aea9401db28db34a0"},
@@ -710,6 +807,17 @@ pillow = [
     {file = "Pillow-8.3.1-pp37-pypy37_pp73-win_amd64.whl", hash = "sha256:1c03e24be975e2afe70dfc5da6f187eea0b49a68bb2b69db0f30a61b7031cee4"},
     {file = "Pillow-8.3.1.tar.gz", hash = "sha256:2cac53839bfc5cece8fdbe7f084d5e3ee61e1303cccc86511d351adcb9e2c792"},
 ]
+psycopg2 = [
+    {file = "psycopg2-2.9.1-cp36-cp36m-win32.whl", hash = "sha256:7f91312f065df517187134cce8e395ab37f5b601a42446bdc0f0d51773621854"},
+    {file = "psycopg2-2.9.1-cp36-cp36m-win_amd64.whl", hash = "sha256:830c8e8dddab6b6716a4bf73a09910c7954a92f40cf1d1e702fb93c8a919cc56"},
+    {file = "psycopg2-2.9.1-cp37-cp37m-win32.whl", hash = "sha256:89409d369f4882c47f7ea20c42c5046879ce22c1e4ea20ef3b00a4dfc0a7f188"},
+    {file = "psycopg2-2.9.1-cp37-cp37m-win_amd64.whl", hash = "sha256:7640e1e4d72444ef012e275e7b53204d7fab341fb22bc76057ede22fe6860b25"},
+    {file = "psycopg2-2.9.1-cp38-cp38-win32.whl", hash = "sha256:079d97fc22de90da1d370c90583659a9f9a6ee4007355f5825e5f1c70dffc1fa"},
+    {file = "psycopg2-2.9.1-cp38-cp38-win_amd64.whl", hash = "sha256:2c992196719fadda59f72d44603ee1a2fdcc67de097eea38d41c7ad9ad246e62"},
+    {file = "psycopg2-2.9.1-cp39-cp39-win32.whl", hash = "sha256:2087013c159a73e09713294a44d0c8008204d06326006b7f652bef5ace66eebb"},
+    {file = "psycopg2-2.9.1-cp39-cp39-win_amd64.whl", hash = "sha256:bf35a25f1aaa8a3781195595577fcbb59934856ee46b4f252f56ad12b8043bcf"},
+    {file = "psycopg2-2.9.1.tar.gz", hash = "sha256:de5303a6f1d0a7a34b9d40e4d3bef684ccc44a49bbe3eb85e3c0bffb4a131b7c"},
+]
 pygments = [
     {file = "Pygments-2.9.0-py3-none-any.whl", hash = "sha256:d66e804411278594d764fc69ec36ec13d9ae9147193a1740cd34d272ca383b8e"},
     {file = "Pygments-2.9.0.tar.gz", hash = "sha256:a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f"},
@@ -738,6 +846,10 @@ sqlparse = [
     {file = "sqlparse-0.4.1-py3-none-any.whl", hash = "sha256:017cde379adbd6a1f15a61873f43e8274179378e95ef3fede90b5aa64d304ed0"},
     {file = "sqlparse-0.4.1.tar.gz", hash = "sha256:0f91fd2e829c44362cbcfab3e9ae12e22badaa8a29ad5ff599f9ec109f0454e8"},
 ]
+swapper = [
+    {file = "swapper-1.1.2.post1-py3-none-any.whl", hash = "sha256:f3bc7b77b76daf46fcbd41fda9b2f599974ac8c564e129f2a9bae73871c4116e"},
+    {file = "swapper-1.1.2.post1.tar.gz", hash = "sha256:51651018fb027354dd27ff38d5eb47a225d3e642c99b04cff878ae65b1872f64"},
+]
 tablib = [
     {file = "tablib-3.0.0-py3-none-any.whl", hash = "sha256:41aa40981cddd7ec4d1fabeae7c38d271601b306386bd05b5c3bcae13e5aeb20"},
     {file = "tablib-3.0.0.tar.gz", hash = "sha256:f83cac08454f225a34a305daa20e2110d5e6335135d505f93bc66583a5f9c10d"},
@@ -761,10 +873,20 @@ wagtail-markdown = [
     {file = "wagtail-markdown-0.7.0.tar.gz", hash = "sha256:ea6aaea5ee84a66d25cb66854720fe8d4306730f4edce19afbe57655c5ba9621"},
     {file = "wagtail_markdown-0.7.0-py2.py3-none-any.whl", hash = "sha256:e1002dfc14514c89002c475789ae4cf4e7fd88439eef47ba60328f49cd69ebe1"},
 ]
+wagtail-marketing-addons = [
+    {file = "wagtail-marketing-addons-0.6.tar.gz", hash = "sha256:12385a6039ef6bb3ac38a24df9fc138766c0c7351d4dd7666f151ff1ee645f11"},
+    {file = "wagtail_marketing_addons-0.6-py3-none-any.whl", hash = "sha256:2d3dba26eee31b78a0b00ab5e93eaceeb8dc6760484bd34810ad020f0599ff7b"},
+]
 wagtail-metadata = [
     {file = "wagtail-metadata-3.3.1.tar.gz", hash = "sha256:d346ec8b39a5e040aee525b297043d4ee3c6748b8feef64f5d8bdbf949045505"},
     {file = "wagtail_metadata-3.3.1-py2.py3-none-any.whl", hash = "sha256:8a4f108b499cb75998ca733551d4e754c266ac1e5ae3d721abb30f8a7105c858"},
 ]
+wagtail-review = []
+wagtail-sharing = [
+    {file = "wagtail-sharing-2.5.1.tar.gz", hash = "sha256:e470474b0e406e819d2ac5c81c6e4ec105a045f4f1c285bc1abb4c3f5af79492"},
+    {file = "wagtail_sharing-2.5.1-py2.py3-none-any.whl", hash = "sha256:4526b05fb03faa34204fb81e426fc025c1201ce242da44871b8609116af1a392"},
+]
+wagtailmedia = []
 wagtailmenus = [
     {file = "wagtailmenus-3.0.2-py3-none-any.whl", hash = "sha256:518b8e74fddcae91115313085673b72fdfc17aa4f711f0ea00dbdffa20abce33"},
     {file = "wagtailmenus-3.0.2.tar.gz", hash = "sha256:77c2e098decc8882f8fbf4fbab6c04911a0daf744aabbfb7e4952f03e3533386"},

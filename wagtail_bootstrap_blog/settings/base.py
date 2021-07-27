@@ -30,7 +30,7 @@ INSTALLED_APPS = [
 
     'ab_comment.apps.AbCommentConfig',
     'django_comments',
-
+    'wagtail_marketing',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -55,8 +55,9 @@ INSTALLED_APPS = [
     'wagtailcaptcha',
     'wagtailmenus',
     'wagtailmetadata',
-    'wagtail_review',
-
+    # 'wagtail_review',
+    'wagtailmedia',
+    'wagtailsharing',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,6 +66,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    "wagtail.contrib.table_block",
+
 ]
 
 
@@ -193,3 +196,41 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 COMMENTS_APP = 'ab_comment'
 SITE_ID = 1
+PREFIX_LOCALE_PATH = os.path.join(BASE_DIR, "locale")
+LOCALE_PATHS = [
+    os.path.join(PREFIX_LOCALE_PATH, "global"),
+    os.path.join(PREFIX_LOCALE_PATH, "wagtail_review"),
+    os.path.join(PREFIX_LOCALE_PATH, "wagtailmedia"),
+    os.path.join(PREFIX_LOCALE_PATH, "wagtail"),
+]
+
+# unlock send messege for email use review
+REVIEW_SEND_EMAIL = False
+
+
+default_table_options = {
+    'minSpareRows': 0,
+    'startRows': 3,
+    'startCols': 2,
+    'colHeaders': False,
+    'rowHeaders': False,
+    'contextMenu': [
+        'row_above',
+        'row_below',
+        '---------',
+        'col_left',
+        'col_right',
+        '---------',
+        'remove_row',
+        'remove_col',
+        '---------',
+        'undo',
+        'redo'
+    ],
+    'editor': 'text',
+    'stretchH': 'all',
+    'height': 108,
+    'language': 'ru',
+    'renderer': 'text',
+    'autoColumnSize': True,
+}

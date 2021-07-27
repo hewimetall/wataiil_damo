@@ -99,3 +99,20 @@ def register_images_menu_item():
         _('Reviews'), reverse('wagtail_review_admin:dashboard'),
         name='reviews', classnames='icon icon-tick', order=1000
     )
+
+
+
+class UserbarPuppyLinkItem:
+    def render(self, request):
+        return """
+        <div class="wagtail-userbar__item ">
+    <div class="wagtail-action">
+        <a id="wagtail-toggle-mode" >
+         Переключить  режим анотации
+        </a>
+    </div>
+</div>"""
+
+@hooks.register('construct_wagtail_userbar')
+def add_puppy_link_item(request, items):
+    return items.append( UserbarPuppyLinkItem() )

@@ -21,6 +21,14 @@ SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
 # import dj_database_url
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
+INSTALLED_APPS = INSTALLED_APPS + [
+    'debug_toolbar',
+]
+
+MIDDLEWARE = MIDDLEWARE + [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+INTERNAL_IPS = ("127.0.0.1", "172.17.0.1")
 
 DATABASES = {
     'default': {
@@ -32,6 +40,10 @@ DATABASES = {
         'PORT': '',
     }
 }
+# INSTALLED_APPS += [
+#     'forks.wagtail_review',
+#     'forks.wagtailmedia'
+# ]
 
 try:
     from .local import *

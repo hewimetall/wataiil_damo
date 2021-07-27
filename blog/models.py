@@ -18,6 +18,7 @@ from wagtail.admin.edit_handlers import (
     PageChooserPanel,
     StreamFieldPanel,
 )
+from django.template.defaultfilters import slugify as django_slugify
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
@@ -32,6 +33,8 @@ from .blocks import BodyBlock
 
 
 class BlogPage(RoutablePageMixin, Page):
+    list_display = ('header_image', 'tags')
+
     description = models.CharField(max_length=255, blank=True,verbose_name='Описание')
 
     content_panels = Page.content_panels + [FieldPanel("description", classname="full")]
@@ -130,8 +133,13 @@ class BlogPage(RoutablePageMixin, Page):
 
         return output
 
+    class Meta:
+        verbose_name = "Страница блогов"
+
 
 class PostPage(MetadataPageMixin, Page):
+    list_display = ('header_image', 'tags')
+
     header_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -152,7 +160,7 @@ class PostPage(MetadataPageMixin, Page):
     content_panels = Page.content_panels + [
         ImageChooserPanel("header_image"),
         InlinePanel("categories", label="Категории"),
-        FieldPanel("tags"),
+        FieldPanel("tags",classname='full'),
         StreamFieldPanel("body"),
     ]
 
@@ -180,6 +188,11 @@ class PostPage(MetadataPageMixin, Page):
     def get_sitemap_urls(self, request=None):
         return []
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Страница постов"
 
 class PostPageBlogCategory(models.Model):
     page = ParentalKey(
@@ -214,15 +227,30 @@ class BlogCategory(models.Model):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
-
-class PostPageTag(TaggedItemBase):
-    content_object = ParentalKey("PostPage", related_name="post_tags")
+alphabet = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo', 'ж': 'zh', 'з': 'z', 'и': 'i',
+            'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
+            'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ы': 'i', 'э': 'e', 'ю': 'yu',
+            'я': 'ya'}
 
 
 @register_snippet
 class Tag(TaggitTag):
+    def slugify(self, tag, i=None):
+        slug = django_slugify(''.join(alphabet.get(w, w) for w in tag.lower()))
+        if i is not None:
+            slug += "_%d" % i
+        return slug
+
     class Meta:
         proxy = True
+
+class PostPageTag(TaggedItemBase):
+    content_object = ParentalKey("PostPage", related_name="post_tags")
+
+    @classmethod
+    def tag_model(cls):
+        return Tag
+
 
 
 class FormField(AbstractFormField):
@@ -251,3 +279,6 @@ class FormPage(WagtailCaptchaEmailForm):
 
     def get_form_fields(self):
         return self.custom_form_fields.all()
+
+    class Meta:
+        verbose_name = "Страница с формой"

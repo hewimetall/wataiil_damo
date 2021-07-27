@@ -8,7 +8,7 @@ from .views import CommentDeleteView
 
 class CommentAdmin(ModelAdmin):
     model = get_comment_model()
-    menu_label = "Comments"
+    menu_label = "Коментарии"
     menu_icon = "doc-full-inverse"
     add_to_settings_menu = False
     delete_view_class = CommentDeleteView

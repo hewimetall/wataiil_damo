@@ -21,7 +21,7 @@ from wagtail.images.api.fields import ImageRenditionField
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 from wagtailmarkdown.blocks import MarkdownBlock
-
+from wagtail.contrib.table_block.blocks import TableBlock
 
 class ImageText(StructBlock):
     reverse = BooleanBlock(required=False)
@@ -34,7 +34,7 @@ class BodyBlock(StreamBlock):
     h2 = CharBlock()
     paragraph = RichTextBlock(label="Параграф")
     markdown = MarkdownBlock(icon="code")
-
+    table = TableBlock()
     image_text = ImageText(label="Изображения")
     image_carousel = ListBlock(ImageChooserBlock(label="Изображения"), label="Карусель")
     thumbnail_gallery = ListBlock(ImageChooserBlock(label="Изображения"), label="Миниатюры")

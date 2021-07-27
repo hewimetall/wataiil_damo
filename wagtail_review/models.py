@@ -19,7 +19,6 @@ from wagtail_review.text import user_display_name
 
 
 
-
 REVIEW_STATUS_CHOICES = [
     ('open', _("Open")),
     ('closed', _("Closed")),

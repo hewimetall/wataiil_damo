@@ -1,5 +1,4 @@
 {% load static wagtailuserbar %}
-{% load wagtailreview_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -32,15 +31,17 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+                {% if request.is_preview %}
+                <link href="{% static 'anotat/css/recogito.min.css' %}" rel="stylesheet">
+                {%  endif %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-{% wagtailreview %}
 
         {% include 'blog/components/navbar.html' %}
 
-        <div class="container">
+        <div class="container" {% if request.is_preview %} id="anot" {% endif %}>
           <div class="row">
               <div class="col-md-8">
                 {% block content %}{% endblock %}
@@ -53,6 +54,19 @@
 
         <script src="{% static 'js/vendors.js' %}"></script>
         <script src="{% static 'js/app.js' %}"></script>
+        {% block anotac %}
+            {# Override this in templates to modify logic anot extra javascript #}
+        {% if request.is_preview %}
+                    <script src="{% static 'anotat/js/recogito.min.js' %}"></script>
+                    <script src="{% static 'anotat/js/recogito-polyfills.js' %}"></script>
+                    <script src="{% static 'anotat/js/main.js' %}"></script>
+          <script type="text/javascript">
+
+            annotation('anot', '/api/annotations/{{ page.page_ptr.pk }}' );
+          </script>
+        {% endif %}
+        {% endblock %}
+
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
