@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'home',
     'search',
     'blog',
-
     'ab_comment.apps.AbCommentConfig',
     'django_comments',
     'wagtail_marketing',

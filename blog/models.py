@@ -30,15 +30,16 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtailcaptcha.models import WagtailCaptchaEmailForm
 from wagtailmetadata.models import MetadataPageMixin
 from .blocks import BodyBlock
+from wagtail.admin.edit_handlers import HelpPanel
 
 
 class BlogPage(RoutablePageMixin, Page):
-    list_display = ('header_image', 'tags')
-
     description = models.CharField(max_length=255, blank=True,verbose_name='Описание')
 
     content_panels = Page.content_panels + [FieldPanel("description", classname="full")]
+
     subpage_types = ['PostPage', 'FormPage']
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
 
@@ -139,6 +140,12 @@ class BlogPage(RoutablePageMixin, Page):
 
 class PostPage(MetadataPageMixin, Page):
     list_display = ('header_image', 'tags')
+    is_yandex = models.BooleanField(verbose_name='Выводится в Яндекс.новостях', default=True)
+
+    is_recl = models.BooleanField(verbose_name='Рекламная', default=False)
+    is_pay = models.BooleanField(verbose_name='Платная', default=False)
+    is_close_comment = models.BooleanField(verbose_name='Отключать комменарии автоматически', default=True)
+    is_picture = models.BooleanField(verbose_name='Отключить главную картинку', default=False)
 
     header_image = models.ForeignKey(
         "wagtailimages.Image",
@@ -163,10 +170,18 @@ class PostPage(MetadataPageMixin, Page):
         FieldPanel("tags",classname='full'),
         StreamFieldPanel("body"),
     ]
-
+    promote_panels = [
+        HelpPanel(template='menu/help_static.html'),
+        FieldPanel("is_yandex"),
+    ]+ MetadataPageMixin.promote_panels
     settings_panels = Page.settings_panels + [
+        MultiFieldPanel([
         FieldPanel("post_date"),
-    ]
+        FieldPanel('is_close_comment'),
+        FieldPanel('is_recl'),
+        FieldPanel('is_pay'),
+        FieldPanel('is_picture'),
+    ], 'Общие настройки'), ]
 
     search_fields = Page.search_fields + [
         index.SearchField('title'),

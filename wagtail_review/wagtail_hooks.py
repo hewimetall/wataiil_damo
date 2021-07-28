@@ -40,11 +40,17 @@ class SubmitForReviewMenuItem(ActionMenuItem):
 
 @hooks.register('construct_page_action_menu')
 def remove_submit_to_moderator_option(menu_items, request, context):
-    for (i, menu_item) in enumerate(menu_items):
-        if menu_item.name == 'action-submit':
-            menu_items[i] = SubmitForReviewMenuItem()
+    menu_items.insert(0, SubmitForReviewMenuItem())
 
+from django.utils.html import format_html
+from django.templatetags.static import static
 
+@hooks.register('insert_editor_css')
+def get_data():
+    return format_html(
+        '<link rel="stylesheet" href="{}">',
+        static('css/test_static.css')
+    )
 def handle_submit_for_review(request, page):
     if 'action-submit-for-review' in request.POST:
         print("test")

@@ -1,23 +1,12 @@
 from wagtail.core.blocks import (
     BooleanBlock,
     CharBlock,
-    ChoiceBlock,
-    DateTimeBlock,
-    FieldBlock,
-    IntegerBlock,
     ListBlock,
-    PageChooserBlock,
-    RawHTMLBlock,
     RichTextBlock,
     StreamBlock,
     StructBlock,
-    StructValue,
-    TextBlock,
-    URLBlock,
 )
-from wagtail.core.models import Orderable, Page
 from wagtail.embeds.blocks import EmbedBlock
-from wagtail.images.api.fields import ImageRenditionField
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 from wagtailmarkdown.blocks import MarkdownBlock
@@ -35,6 +24,8 @@ class BodyBlock(StreamBlock):
     paragraph = RichTextBlock(label="Параграф")
     markdown = MarkdownBlock(icon="code")
     table = TableBlock()
+    table.label = 'Таблица'
+    embed = EmbedBlock(label='Внешний контент')
     image_text = ImageText(label="Изображения")
     image_carousel = ListBlock(ImageChooserBlock(label="Изображения"), label="Карусель")
     thumbnail_gallery = ListBlock(ImageChooserBlock(label="Изображения"), label="Миниатюры")
