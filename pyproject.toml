@@ -5,7 +5,7 @@ description = ""
 authors = ["Ваше Имя <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 Django = "*"
 wagtail = "*"
 django-extensions = "*"

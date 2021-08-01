@@ -32,6 +32,8 @@ from wagtailmetadata.models import MetadataPageMixin
 from .blocks import BodyBlock
 from wagtail.admin.edit_handlers import HelpPanel
 
+from wagtail.contrib.table_block.blocks import TableBlock
+
 
 class BlogPage(RoutablePageMixin, Page):
     description = models.CharField(max_length=255, blank=True,verbose_name='Описание')
@@ -239,13 +241,36 @@ class BlogCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
 
 alphabet = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo', 'ж': 'zh', 'з': 'z', 'и': 'i',
             'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
             'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ы': 'i', 'э': 'e', 'ю': 'yu',
             'я': 'ya'}
+
+
+
+
+@register_snippet
+class Tables(models.Model):
+    lable = models.CharField(verbose_name='Метка',help_text='Отображаемая имформация при поиске', max_length=120)
+    tables = StreamField([
+        ('Table',TableBlock()),
+        ])
+
+    panels = [
+
+        FieldPanel('lable',classname="full header"),
+        FieldPanel('tables',classname="full"),
+    ]
+
+    def __str__(self):
+        return self.lable
+    class Meta:
+        verbose_name = "Таблица"
+        verbose_name_plural = "Таблицы"
+
 
 
 @register_snippet
@@ -258,6 +283,8 @@ class Tag(TaggitTag):
 
     class Meta:
         proxy = True
+        verbose_name = "Тег"
+        verbose_name_plural = "Теги"
 
 class PostPageTag(TaggedItemBase):
     content_object = ParentalKey("PostPage", related_name="post_tags")

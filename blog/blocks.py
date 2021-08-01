@@ -5,6 +5,7 @@ from wagtail.core.blocks import (
     RichTextBlock,
     StreamBlock,
     StructBlock,
+    BlockQuoteBlock
 )
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
@@ -24,8 +25,8 @@ class BodyBlock(StreamBlock):
     paragraph = RichTextBlock(label="Параграф")
     markdown = MarkdownBlock(icon="code")
     table = TableBlock()
-    table.label = 'Таблица'
     embed = EmbedBlock(label='Внешний контент')
     image_text = ImageText(label="Изображения")
     image_carousel = ListBlock(ImageChooserBlock(label="Изображения"), label="Карусель")
     thumbnail_gallery = ListBlock(ImageChooserBlock(label="Изображения"), label="Миниатюры")
+    quote = BlockQuoteBlock(label='Цитата')

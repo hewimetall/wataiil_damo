@@ -117,6 +117,7 @@ DATABASES = {
     }
 }
 
+WAGTAILIMAGES_IMAGE_MODEL = 'home.CustomImage'
 
 
 # Password validation
