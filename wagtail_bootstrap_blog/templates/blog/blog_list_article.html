@@ -1,0 +1,100 @@
+{% extends "blog/base_list_article.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body %}
+
+{% for post in posts %}
+{% image post.header_image original as header_image %}
+{% if forloop.counter == 1 %}
+<a href="{{ post.full_url }}" class="big-article">
+    <div class="big-article__image">
+        <img src="{{ header_image.url }}" alt="" class="big-article__img">
+    </div>
+    <div class="big-article__inner">
+        <h4 class="big-article__title">
+            {{ post.title }}
+        </h4>
+        <div class="big-article__info">
+            <time datetime="2021-08-02" class="g-margin-right-10">2 августа 2021 г.</time>
+            <span class="g-margin-right-10">1 комментарий</span>
+            <span>около 5 минут на чтение</span>
+        </div>
+    </div>
+</a>
+<ul class="grid-list" id="articles-list" data-page="2" data-start="19" data-limit="20">
+
+    {% elif forloop.counter == 2 %}
+    <li class="grid-list__item grid-list__item_x2 adaptive-card adaptive-card-transform">
+        <article class="b-widget-article-biggest">
+            <a href="{{ post.full_url }}" class="b-widget-article-biggest-link
+                  " target="_blank">
+                <img alt="«Новые люди» расчистили подводные свалки в Иркутской области" src="{{ header_image.url }}">
+                <section>
+                    <header>
+                        <h4>{{ post.title }}</h4>
+                    </header>
+                    <div class="b-widget-article-biggest-info">
+                        <time datetime="2021-08-04" class="g-margin-right-10">4 августа 2021 г.</time>
+                        <span class="g-margin-right-10">2 комментария</span>
+                        <span>около 7 минут на чтение</span>
+                    </div>
+                </section>
+            </a>
+            <footer>
+                <span class=""></span>
+            </footer>
+        </article>
+    </li>
+
+    {% elif forloop.counter == 3 %}
+    <li class="grid-list__item grid-list__item_x2 adaptive-card adaptive-card-transform">
+        <article class="b-widget-article-biggest">
+            <a href="{{ post.full_url }}" class="b-widget-article-biggest-link
+              " target="_blank">
+                <img alt="«Новые люди» расчистили подводные свалки в Иркутской области" src="{{ header_image.url }}">
+                <section>
+                    <header>
+                        <h4>{{ post.title }}</h4>
+                    </header>
+                    <div class="b-widget-article-biggest-info">
+                        <time datetime="2021-08-04" class="g-margin-right-10">4 августа 2021 г.</time>
+                        <span class="g-margin-right-10">2 комментария</span>
+                        <span>около 7 минут на чтение</span>
+                    </div>
+                </section>
+            </a>
+            <footer>
+                <span class=""></span>
+            </footer>
+        </article>
+    </li>
+
+    {% elif forloop.counter == 4 %}
+    <li class="grid-list__item grid-list__item_100 grid-list__item_max g-margin-bottom-40">
+        <article class="b-widget-article-biggest">
+            <a href="{{ post.full_url }}" class="b-widget-article-biggest-link
+              " target="_blank">
+                <img alt="Ресторанные новости: 10 новых заведений за два месяца" src="{{ header_image.url }}">
+                <section>
+                    <header>
+                        <h4>{{ post.title }}</h4>
+                    </header>
+                    <div class="b-widget-article-biggest-info">
+                        <time datetime="2021-07-30" class="g-margin-right-10">30 июля 2021 г.</time>
+                        <span class="g-margin-right-10">9 комментариев</span>
+                        <span>около 6 минут на чтение</span>
+                    </div>
+                </section>
+            </a>
+            <footer>
+                <span class=" 
+                 ">
+                </span>
+            </footer>
+        </article>
+        <div></div>
+    </li>
+    {% endif %}
+</ul>
+{% endfor %}
+{% endblock %}

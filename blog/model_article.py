@@ -36,7 +36,9 @@ from wagtail.contrib.table_block.blocks import TableBlock
 
 
 
-class BlogNewsPage(RoutablePageMixin, Page):
+class BloglListArticlePage(RoutablePageMixin, Page):
+    template = "blog/blog_list_article.html"
+
     description = models.CharField(max_length=255, blank=True,verbose_name='Описание')
 
     content_panels = Page.content_panels + [FieldPanel("description", classname="full")]
@@ -46,13 +48,12 @@ class BlogNewsPage(RoutablePageMixin, Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='Предыдущая связанная новость'
     )
 
     content_panels = Page.content_panels + [
             FieldPanel("tags",classname='full'),
     ]
-    subpage_types = ['PostPage', 'BlogPostPage']
+    subpage_types = ['PostPage', 'BlogArticlePage']
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
@@ -71,10 +72,7 @@ class BlogNewsPage(RoutablePageMixin, Page):
         return context
 
     def get_posts(self):
-        q = BlogPostPage.objects.descendant_of(self).live().order_by("-post_date")
-        print(q.count())
-        print(q[0].full_url)
-
+        q = BlogArticlePage.objects.descendant_of(self).live().order_by("-post_date")
         return q
 
     @route(r"^(\d{4})/$")
@@ -153,11 +151,11 @@ class BlogNewsPage(RoutablePageMixin, Page):
         return output
 
     class Meta:
-        verbose_name = "Лента новостей"
+        verbose_name = "Лента записей"
 
 
-class BlogPostPage(RoutablePageMixin, Page):
-    template = "blog/blog_news.html"
+class BlogArticlePage(RoutablePageMixin, Page):
+    template = "blog/blog_article.html"
 
     header_image = models.ForeignKey(
         "home.CustomImage",
@@ -179,21 +177,11 @@ class BlogPostPage(RoutablePageMixin, Page):
     is_recl_3 = models.BooleanField(verbose_name='Не дублировать', default=False)
     
 
-    tags = ClusterTaggableManager(through="blog.PostPage2Tag", blank=True)
-    related_page = ParentalKey("BlogPostPage", related_name="++",null=True,blank=True,on_delete=models.SET_NULL, verbose_name='Предыдущая связанная новость')
-    # related_page = models.ForeignKey(
-    #     'wagtailcore.Page',
-    #     null=True,
-    #     blank=True,
-    #     on_delete=models.SET_NULL,
-    #     related_name='+',
-        
-    # )
+    tags = ClusterTaggableManager(through="blog.PostPage3Tag", blank=True)
 
     content_panels = Page.content_panels + [
         ImageChooserPanel("header_image"),
         FieldPanel("tags",classname='full'),
-        PageChooserPanel('related_page', 'blog.BlogPostPage'),
         StreamFieldPanel("body"),
     ]
 
@@ -226,10 +214,10 @@ class BlogPostPage(RoutablePageMixin, Page):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name = "Новость"
+        verbose_name = "Запись"
 
-class PostPage2Tag(TaggedItemBase):
-    content_object = ParentalKey("BlogPostPage", related_name="post_tags")
+class PostPage3Tag(TaggedItemBase):
+    content_object = ParentalKey("BlogArticlePage", related_name="post_tags")
 
     @classmethod
     def tag_model(cls):

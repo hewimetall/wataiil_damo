@@ -1,25 +1,34 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div id="carouselExampleIndicators_{{ block.id }}" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    {% for item in block.value %}
-      <li data-target="#carouselExampleIndicators_{{ block.id }}" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 1 %}active{% endif %}"></li>
-    {% endfor %}
-  </ol>
-  <div class="carousel-inner">
-    {% for item in block.value %}
-      <div class="carousel-item {% if forloop.counter0 == 1 %}active{% endif %}">
-        {% image item width-400 as img %}
-        <img class="d-block w-100" src="{{ img.url }}" >
-      </div>
-    {% endfor %}
+<div class="content-slider-wrapper">
+  <div class="content-slider__controls j-slider-nav">
+    <!--<span class="content-slider__button content-slider__button_full j-slider-full"></span>--><span
+      class="content-slider__button content-slider__button_prev j-slider-prev"></span><span
+      class="content-slider__button content-slider__button_next j-slider-next disabled"></span>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators_{{ block.id }}" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators_{{ block.id }}" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <div class="content-slider j-articles-slider-content owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+      <div class="owl-stage"
+        style="transform: translate3d(-805px, 0px, 0px); transition: all 0.25s ease 0s; width: 1610px;">
+        {% for item in block.value %}
+        <div class="owl-item {% if forloop.counter0 == 1 %}active{% endif %}" style="width: 805px; margin-right: 0px;">
+          {% image item width-400 as img %}
+              <figure class="content-slider__item"><img class="content-slider__img"
+                src="{{ img.url }}"
+                alt=""></figure>
+              {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+    <div class="owl-controls">
+      <div class="owl-nav">
+        <div class="owl-prev" style=""></div>
+        <div class="owl-next disabled" style=""></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-slider__description j-slider-description"><span
+      class="content-slider__description__item j-slider-photo-desc"></span><span
+      class="content-slider__description__item j-slider-photo-desc active"></span></div>
 </div>

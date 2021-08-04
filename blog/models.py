@@ -326,3 +326,4 @@ class FormPage(WagtailCaptchaEmailForm):
         verbose_name = "Страница с формой"
 
 from .model_news import BlogNewsPage, BlogPostPage
+from .model_article import BlogArticlePage, BloglListArticlePage
