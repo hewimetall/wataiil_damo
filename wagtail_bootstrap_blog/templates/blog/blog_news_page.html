@@ -1,0 +1,1957 @@
+{% load wagtailcore_tags wagtailimages_tags blogapp_tags static wagtailmetadata_tags comments crispy_forms_tags %}
+<!DOCTYPE html>
+<html
+    class="j-toggle-target-bodyhide js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths Firefox"
+    data-toggle-class="b-main-menu-opened" style="">
+    <head>
+        <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"740020a769",applicationID:"565285"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","queueTime":0,"licenseKey":"740020a769","agent":"","transactionName":"ZgRXYhQHD0NVUUxQDV9Oc0MIBRVZW1wXUBBaT1tTERVPRl1XT0pYeA9RUx4wCFVDHF9cFg==","applicationID":"565285","errorBeacon":"bam-cell.nr-data.net","applicationTime":456}</script>
+        <link rel="shortcut icon" href="https://static.irk.ru/static/img/favicon.ico" />
+        <title> Новости Иркутска: экономика, спорт, медицина, культура, происшествия </title>
+    
+        
+            <link rel="image_src" href="https://static.irk.ru/static/img/irkru_social_logo_200.png">
+            <meta property="og:image" content="https://static.irk.ru/static/img/irkru_social_logo_200.png" />
+            <link type="application/opensearchdescription+xml" rel="search" href="/news/opensearch/" title="Новости IRK.ru"/>
+            <link type="application/opensearchdescription+xml" rel="search" href="/afisha/opensearch/" title="Афиша IRK.ru"/>
+        
+    
+        
+        <link rel="canonical" href="https://www.irk.ru/news/">
+    
+    
+        
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    
+        <link rel="apple-touch-icon" sizes="57x57" href="https://static.irk.ru/static/img/icons/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://static.irk.ru/static/img/icons/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://static.irk.ru/static/img/icons/apple-touch-icon-114x114.png" />
+        <link rel="dns-prefetch" href="https://static.irk.ru/static/">
+        <link rel="dns-prefetch" href="https://twitter.com">
+        <link rel="dns-prefetch" href="http://vk.com">
+        <link rel="dns-prefetch" href="http://www.facebook.com">
+        <link rel="dns-prefetch" href="http://s-static.ak.facebook.com">
+        <link rel="dns-prefetch" href="http://connect.facebook.net">
+        <link rel="dns-prefetch" href="http://platform.twitter.com">
+        <link rel="manifest" href="https://static.irk.ru/static/manifest.json">
+    
+        
+        
+    
+    <link rel="stylesheet" type="text/css" media="all" href="https://static.irk.ru/static/css/compiled/compile/apps/news.css">
+    
+    
+    
+        
+    
+        
+            <script src="https://static.irk.ru/static/js/lib/jquery-1.11.1.min.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/jquery-migrate-1.2.1.min.js"></script>
+        
+    
+        
+    
+    
+        
+        
+        
+            
+    
+    <script type=text/javascript>
+        /**
+         * Движок IRK.ru
+         *
+         * Методы:
+         * {@link irk.autocompleteInit}
+         * {@link irk.scrollLinkInit}
+         * {@link irk.init}
+         *
+         * Вложенные объекты:
+         * {@link irk.vars}
+         * {@link irk.apps}
+         * {@link irk.adm}
+         * {@link irk.utils}
+         *
+         * {@link irk.singleLayer}
+         * {@link irk.scrollTop}
+         * {@link irk.reveal}
+         * {@link irk.showMore}
+         * {@link irk.filter}
+         * {@link irk.tabSwitcher}
+         * {@link irk.map}
+         * {@link irk.notification}
+         * {@link irk.headerFlow}
+         * {@link irk.subscribe}
+         * {@link irk.copyright}
+         * {@link irk.article}
+         *
+         * {@link irk.fullScreen}
+         * {@link irk.photo}
+         */
+        var irk = {
+            staticPath: 'https://static.irk.ru/static/',
+    
+            banner: {
+                object: null,
+                options: {}
+            },
+            /*
+             * TODO: Надо прошерстить использование и убить ввиду отсутствия toolbar`а как такового
+             */
+            toolbar: {
+                logoColors: '',
+                logoImage: '',
+                logoImageHover: ''
+            }
+        };
+    </script>
+    
+            <script src="https://static.irk.ru/static/js/apps-js/adv/google_advert.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/modernizr-2.6.2-bro-fix.js"></script>
+            
+            <script src="https://static.irk.ru/static/js/lib/firebase-app.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/firebase-messaging.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/jquery.form.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/jquery-cookie.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/owl.carousel.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/jquery.sticky-kit.min.js"></script>
+            <script src="https://static.irk.ru/static/js/apps-js/irk.new.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/swfobject.1.1.1.js"></script>
+            <script src="https://static.irk.ru/static/js/lib/jquery.overlayPhoto.js"></script>
+    
+            
+                <script async id="__lxGc__rtr" src="https://s.clickiocdn.com/t/210163/360.js"></script>
+                <script async src="https://s.luxupcdnc.com/t/common_402.js"></script>
+                
+                
+    
+    <script async src='https://yastatic.net/pcode/adfox/header-bidding.js'></script>
+    <script>
+        const adfoxBiddersMap = {
+            'myTarget': '816008' ,
+            'betweenDigital': '871789' ,
+        };
+        var adUnits=[{code:"adfox_156155777656222335",sizes:[[300,250],[336,280]],bids:[{bidder:"myTarget",params:{placementId:519423}},{bidder:"betweenDigital",params:{placementId:3192333}}]},{code:"adfox_156699716531271049",sizes:[[300,250]],bids:[{bidder:"myTarget",params:{placementId:592088}},{bidder:"betweenDigital",params:{placementId:3322997}}]},{code:"adfox_15669971758767319",sizes:[[580,300]],bids:[{bidder:"myTarget",params:{placementId:592095}},{bidder:"betweenDigital",params:{placementId:3322998}}]},{code:"adfox_156699718753298473",sizes:[[940,200]],bids:[{bidder:"myTarget",params:{placementId:592097}},{bidder:"betweenDigital",params:{placementId:3322999}}]},{code:"adfox_156699723544196813",sizes:[[300,250]],bids:[{bidder:"myTarget",params:{placementId:592099}},{bidder:"betweenDigital",params:{placementId:3323008}}]}];
+        var userTimeout = 500;
+        window.YaHeaderBiddingSettings = {
+            biddersMap: adfoxBiddersMap,
+            adUnits: adUnits,
+            timeout: userTimeout
+        };
+    </script>
+    <script>(function(){function a(){__clADF__.adxAllowed(0)}var b=window,c=b.document,d=c.getElementsByTagName('head')[0];d||(d=c.createElement('head'),b.appendChild(d)),b.__clADF__={state:0,loaded:0,adxAllowed:function(a){if(1!=this.loaded){n='adfoxAsyncParams',b[n]&&b[n].forEach(function(b){b.params.pk=a}),n1=n+'Scroll',b[n1]&&b[n1].forEach(function(b){b[0].params.pk=a}),n1=n+'Adaptive',b[n1]&&b[n1].forEach(function(b){b[0].params.pk=a}),n='Adaptive',b[n]&&b[n].forEach(function(b){b[0].params.pk=a}),this.state=a;var d=document.createElement('script');d.setAttribute('src','https://yastatic.net/pcode/adfox/loader.js'),d.setAttribute('async','async');var e=c.getElementsByTagName('head')[0];e||(e=c.createElement('head'),b.appendChild(e)),e.appendChild(d),this.loaded=1}}};var e=c.createElement('script');e.setAttribute('src','//clickiocdn.com/hbadx/?f=__clADF__&rt='+new Date().getTime()+'&site_id=210163&title='+encodeURIComponent(c.title)+'&r='+encodeURIComponent(c.referrer)),e.setAttribute('async','async'),e.onreadystatechange=function(){'loaded'!=this.readyState&&'complete'!=this.readyState&&setTimeout(a,0)},e.onerror=function(){setTimeout(a,0)},d.appendChild(e),setTimeout(a,3e3)})();</script>
+    
+            
+    
+            <script>
+                var auth_no_redir = {};
+                var auth_callback = {};
+                var backendVars = [];
+                backendVars['is_auth'] = true;
+                
+                jQuery(function($) {
+                    $(".overlayPhoto").overlayPhotoMake();
+                });
+                
+            </script>
+        
+        
+    
+    <script type="text/javascript" src="https://static.irk.ru/static/js/lib/owl.carousel.js"></script>
+    <script type="text/javascript" src="https://static.irk.ru/static/news/js/news-less.js"></script>
+    
+        <script type="text/javascript" src="https://static.irk.ru/static/js/lib/jquery.sticky-kit.min.js"></script>
+        <script type="text/javascript" src="https://static.irk.ru/static/news/js/lenta.js"></script>
+    
+    
+        
+    
+        <script>
+            /* Инициализируем объект 'irk' */
+            $(function () {
+                irk.init();
+            });
+        </script>
+    
+        
+        <!-- Google Analytics -->
+        <script>
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            
+                ga('create', 'UA-2755893-1', {'userId': '256516'});
+            
+            ga('set', 'transport', 'beacon');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+        </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+        
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+        <!-- / Google Analytics -->
+    
+    
+        
+    
+    
+    </head>
+    
+    <body class="layout-fixed  news g-body-desktop j-toggle-target-bodyhide" data-toggle-class="b-main-menu-opened">
+
+    <div class="b-adblock-message j-adblock-show">
+        <div class="b-adblock-message-container">
+            <div class="b-adblock-message-title">Пожалуйста, отключите AdBlock.</div>
+            <div class="b-adblock-message-subtitle">Мы не просим большего, хотя работаем для вас каждый день.</div>
+        </div>
+    </div>
+
+    <header class="b-header g-accelerate">
+
+        <span class="b-header-scroll-top j-scroll-top">наверх</span>
+        <div class="b-header-container">
+
+
+            <nav>
+                <!--удалить после нг-->
+
+                <a href="https://www.irk.ru/" class="b-header-logo"></a>
+
+                <ul class="b-list-h">
+
+                    <li class="menu1 b-selected">
+
+
+                        <span class="menu-news">Новости</span>
+
+
+                    </li>
+
+                    <li class="menu2">
+
+                        <a class="menu-" href="https://www.irk.ru/news/articles/">
+
+
+                            Статьи
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu3">
+
+                        <a class="menu-" href="https://www.irk.ru/covid/">
+
+
+                            COVID-19
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu4">
+
+                        <a class="menu-" href="https://www.irk.ru/360/">
+
+                            <img src="list_news_files/44ef55f9-9378-4161-b17e-678f18381212.svg" alt="360 лет Иркутску">
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu5">
+
+                        <a class="menu-afisha" href="https://www.irk.ru/afisha/">
+
+
+                            Афиша
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu6">
+
+                        <a class="menu-weather" href="https://www.irk.ru/weather/">
+
+
+                            Погода
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu7">
+
+                        <a class="menu-tourism" href="https://www.irk.ru/tourism/">
+
+
+                            Туризм
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu8">
+
+                        <a class="menu-obed" href="https://www.irk.ru/obed/">
+
+
+                            Обед
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu9">
+
+                        <a class="menu-testing" href="https://www.irk.ru/tests/">
+
+
+                            Тесты
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu10">
+
+                        <a class="menu-" href="https://www.irk.ru/special/">
+
+
+                            Спецпроекты
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu11">
+
+                        <a class="menu-" href="https://www.irk.ru/about/">
+
+
+                            Реклама
+
+                        </a>
+
+                    </li>
+
+                    <li class="menu12">
+
+                        <a class="menu-" href="https://www.irk.ru/about/vacancy/">
+
+
+                            Хочу в IRK.ru
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+
+
+            <div class="b-header-toolbar">
+                <div class="b-header-toolbar-container b-header-toolbar-auth j-header-toolbar-auth">
+
+
+                    <div class="b-push-notifications-toolbar-feature j-push-notifications-feature"
+                        data-feature-url="/users/set_option/" data-feature-title="Подпишитесь на уведомления!"
+                        data-feature-text="После подписки вы будете получать срочные новости.&lt;br/&gt;Не чаще 3-х раз в день.&lt;br/&gt;&lt;br/&gt;Разрешите их в браузере:&lt;br/&gt;&lt;img src='https://static.irk.ru/static/img/push-notifications-example.png' width='93' height='93' style='display: block; margin: 9px 0 0 -5px;'&gt;"
+                        data-feature-button-text="" data-feature-top="65" data-feature-right="-1"
+                        data-feature-class="g-desktop blue-cat-t" data-option-name="news.pushnotificationhintoption"
+                        data-option-value="1"></div>
+
+
+                    <ul
+                        class="b-header-toolbar-auth-menu g-accelerate j-header-auth-menu j-push-notifications-auth-menu j-reveal-block-toggle j-reveal-block-toggle-authmenu">
+                        <li class="b-igrajdanin-list-item">
+                            <div class="b-igrajdanin-menu-container">
+                                <a class="g-block g-margin-bottom-5" href="https://igrajdanin.ru/"><img
+                                        class="b-igrajdanin-link-img g-block" src="list_news_files/igrajdanin.png"
+                                        srcset="list_news_files/igrajdanin2x_002.png 2x"></a>
+                                <a href="https://www.irk.ru/igrajdanin/" class="b-igrajdanin-menu-button">Сообщить о
+                                    проблеме</a>
+                            </div>
+                        </li>
+
+
+
+                        <li class="b-push-notifications-toolbar authentificated g-desktop notification j-push-notifications-init j-push-notification-button j-push-feature-close j-metrika-goal show"
+                            data-metrika-goal="push_subscribe_bell" disabled="">
+                            <a class="g-cursor-pointer">
+
+                                <span class="b-push-notifications-text"></span>
+
+                            </a>
+                        </li>
+
+
+
+                        <li><a href="https://www.irk.ru/auth/logout/?next=/news/">выйти</a></li>
+                        <li><a href="https://www.irk.ru/users/256516-ilya-gulyaev/">публичный профиль</a></li>
+
+                        <li><a href="https://www.irk.ru/users/bookmark/">мои закладки</a></li>
+                        <li><a href="https://www.irk.ru/auth/profile/">редактировать</a></li>
+
+                    </ul>
+                    <a class="avatar j-push-feature-close j-header-toolbar-grajdanin-check j-reveal-button-toggle click"
+                        data-target="authmenu" href="https://www.irk.ru/users/256516-ilya-gulyaev/">
+
+
+                        <div class="user-ava with-image"><img class="avatar-image"
+                                src="list_news_files/b745414f-3cdf-45aa-bd89-ab3faf159556_jpg_30x30_q85.jpg" alt="">
+                        </div>
+
+                        <div class="b-header-toolbar-indicator j-header-toolbar-indicator g-hide"
+                            data-grajdanin-url="/users/set_option/" data-grajdanin-param="news.igrajdaninhintoption"
+                            data-grajdanin-option="2"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="b-container ">
+
+        <ul class="b-notification j-notification">
+
+            <li class="j-notification-blank">
+                <span class="b-notification-text j-notification-text"></span>
+                <span class="b-notification-close j-notification-close"></span>
+            </li>
+
+
+        </ul>
+
+
+
+
+
+
+
+
+
+
+        <article class="b-content">
+
+
+            <header class="b-news-content-header g-margin-bottom-25">
+
+
+                <script type="text/javascript" src="list_news_files/jquery.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('.j-widget-search-news').each(function () {
+                            var $that = $(this),
+                                $searchField = $('input[type="text"]', $that);
+
+                            $that.on('click', '.j-search-submit', function (e) {
+                                e.preventDefault();
+                                $that.submit();
+                            });
+
+                            $searchField.placeholder();
+                        });
+                    });
+                </script>
+
+                <div class="b-widget-search-news-wrapper">
+                    <div class="b-widget-search-news-form j-toggle-target-search " data-toggle-class="show">
+                        <form class="b-widget-search-news j-widget-search-news" action="/news/search/" method="GET">
+                            <span class="b-widget-search-news-button j-search-submit"></span>
+                            <input name="q" type="text" placeholder="Найти...">
+                        </form>
+                    </div>
+                    <a href="#" class="b-widget-search-news-toggle j-toggle-button j-toggle-target-search "
+                        data-toggle-class="opened" data-toggle-target="search"></a>
+                </div>
+
+
+                <ul class="b-news-category-list b-news-category-list-main b-news-category-list-width rubricator">
+
+                    <li class="rubricator__item category-1 g-active j-toggle-target-menumore"
+                        data-toggle-class="g-active-noline">
+
+                        Лента
+
+                    </li>
+
+                    <li class="rubricator__item category-2">
+
+                        <a href="https://www.irk.ru/news/crime/" class="g-hover">Происшествия</a>
+
+                    </li>
+
+                    <li class="rubricator__item category-3">
+
+                        <a href="https://www.irk.ru/news/articles/" class="g-hover">Статьи</a>
+
+                    </li>
+
+                    <li class="rubricator__item category-4">
+
+                        <a href="https://www.irk.ru/news/flash/" class="g-hover">Народные</a>
+
+                    </li>
+
+                    <li class="rubricator__item category-5">
+
+                        <a href="https://www.irk.ru/news/photo/" class="g-hover">Фото</a>
+
+                    </li>
+
+                    <li class="rubricator__item category-6">
+
+                        <a href="https://www.irk.ru/news/expert/" class="g-hover">Эксперт</a>
+
+                    </li>
+
+                    <li class="rubricator__item category-7">
+
+                        <a href="https://www.irk.ru/news/finance/" class="g-hover">Финансы</a>
+
+                    </li>
+
+                    <li class="rubricator__item">
+                        <span class="b-news-category-list-more-link j-toggle-target-menumore j-toggle-button"
+                            data-toggle-target="menumore" data-toggle-class="b-news-more-mobile">
+                            <span class="g-jlink g-color-black">Еще</span>
+                        </span>
+                    </li>
+                </ul>
+                <div class="b-news-category-wrapper j-toggle-target-menumore g-hide" data-toggle-class="g-hide">
+                    <ul class="b-news-category-list b-news-category-list-width b-news-category-list-two rubricator">
+
+                        <li class="rubricator__item category-more-1 hide g-active g-active-noline">
+
+                            <span>
+                                Лента
+                            </span>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-2 hide ">
+
+                            <a href="https://www.irk.ru/news/crime/" class="g-hover">Происшествия</a>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-3 hide ">
+
+                            <a href="https://www.irk.ru/news/articles/" class="g-hover">Статьи</a>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-4 hide ">
+
+                            <a href="https://www.irk.ru/news/flash/" class="g-hover">Народные</a>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-5 hide ">
+
+                            <a href="https://www.irk.ru/news/photo/" class="g-hover">Фото</a>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-6 hide ">
+
+                            <a href="https://www.irk.ru/news/expert/" class="g-hover">Эксперт</a>
+
+                        </li>
+
+                        <li class="rubricator__item category-more-7 hide ">
+
+                            <a href="https://www.irk.ru/news/finance/" class="g-hover">Финансы</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/transport/" class="g-hover">Транспорт</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/ecology/" class="g-hover">Экология</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/sport/" class="g-hover">Спорт</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/culture/" class="g-hover">Культура</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/society/" class="g-hover">Общество</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/politics/" class="g-hover">Власть</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/video/" class="g-hover">Видео</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/blogs/" class="g-hover">Блоги</a>
+
+                        </li>
+
+                        <li class="rubricator__item ">
+
+                            <a href="https://www.irk.ru/news/graphics/" class="g-hover">Наглядно</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </header>
+
+
+            <div class="grid-inner grid-inner_nop">
+                <div class="grid-list grid-list_nowrap grid-list_wrap-900">
+                    <div class="grid-list__item grid-list__item_x3 grid-list__item_100">
+                        <div class="news__article">
+
+                            <section class="g-margin-bottom-75">
+                                <h1 class="g-hide">Новости Иркутска: экономика, спорт, медицина, культура, происшествия
+                                </h1>
+                                <ul class="b-news-article-list j-news-showmore-article-list" data-url="/news/"
+                                    data-page="1" data-last-material="2021-08-03">
+                                    {% for post in posts %}
+                                    <li class="b-news-article-list-item  ">
+                                        <article>
+                                            <header>
+                                                <a href="{{ post.full_url }}">
+                                                {% if post.header_image %}
+                                                {% image post.header_image original as header_image %}
+                                                <figure class="">
+                                                    <img src="{{ header_image.url }}" title="Фото пресс-службы ГУ МВД Росии по Иркутской области" alt="Фото пресс-службы ГУ МВД Росии по Иркутской области" width="280px" height="188px">
+                                                    
+                                                </figure>
+                                                {% endif %}
+                                                 <h2>{{ post.title }}</h2>
+                                                </a>
+                                            </header>
+                                            <div class="g-overflow">
+                                                <p>{{ post.search_description }}</p>
+                                                <footer class="g-color-gray">
+                                                    <time datetime="{{ post.post_date }}">12:41</time>
+                                                    <a href="https://www.irk.ru/news/20210804/scammers/#comments"
+                                                        class="noicon"><span>
+                                                            11&nbsp;отзывов
+                                                        </span></a>
+                                                </footer>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="news-paginator">
+                                    <div class="news-paginator__calendar j-news-calendar-show">
+                                        <div class="b-calendar" id="id_calendar"></div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+                                            var Calendar = $('#id_calendar');
+                                            $('.j-news-calendar-show').click(function (event) {
+                                                event.preventDefault();
+
+                                                Calendar.animate({ opacity: "show" }, 100, function () {
+                                                    $.get('/news/calendar/', {
+                                                        date: '20210804',
+                                                        highlight: '20210804',
+                                                        link: false
+                                                    }, function (response) {
+                                                        Calendar.html(response).find('article').animate({ opacity: "show" }, 200);
+                                                    });
+                                                });
+
+                                                return false;
+                                            });
+                                            // скрываем блок календаря, при клике куда угодно...
+                                            $('body').on('click', function () {
+                                                Calendar.animate({ opacity: "hide" }, 100).empty();
+                                            });
+                                            // ...кроме блока .b-calendar
+                                            $('.b-calendar').on('click', function (event) {
+                                                event.stopPropagation();
+                                            });
+                                        });
+                                    </script>
+
+
+
+
+
+                                    <span class="news-paginator__more j-news-showmore" data-target="article-list">
+                                        Показать еще 20
+                                    </span>
+
+                                </div>
+
+
+
+
+                                <div
+                                    class="b-banners-adaptive_320x320-container g-margin-bottom-20 g-margin-top-20 g-mobile_320 g-mobile_480 g-mobile_768">
+                                    <div class="b-banners-adaptive_320x320 g-height-auto">
+                                        <div class="targetix-banner criteo" id="banner_place_560" data-engaged="false">
+                                            <!-- формат  300x600 моб. (индексная)-->
+                                            <div id="lx_639871" data-cnt="1"
+                                                class="__lxG__multi __lxG__multi_lx_639871"></div>
+                                            <script class="__lxGc__" type="text/javascript" data-cnt="1">
+                                                ((__lxGc__ = window.__lxGc__ || { 's': {}, 'b': 0 })['s']['_210163'] = __lxGc__['s']['_210163'] || { 'b': {} })['b']['_639871'] = { 'i': __lxGc__.b++ };
+                                            </script>
+
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    var $banner = $('#banner_place_' + 560),
+                                                        $bannerContainer = $banner.parent();
+                                                    if ($bannerContainer.hasClass('j-float-block')) {
+                                                        $bannerContainer.addClass('g-mobile_320 criteo').show();
+                                                    } else {
+                                                        $banner.addClass('criteo');
+                                                    }
+                                                });
+                                            </script>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="news-materials show_1200">
+
+
+
+
+
+
+
+
+
+                                    <h3 class="g-block g-margin-bottom-10 g-color-black"><a
+                                            href="https://www.irk.ru/news/blogs/">Блоги</a></h3>
+                                    <ul class="b-widget-blogs-list">
+
+                                        <li class="b-widget-blogs-list-item g-indent">
+                                            <header class="b-widget-blogs-list-item-header">
+
+                                                <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/"
+                                                    class="b-widget-blogs-list-item-avatar-container">
+                                                    <img src="list_news_files/460b3481-b72d-4973-b1e9-78fffc3bae78_jpg_60x60_crop_q85.jpg"
+                                                        alt="Общество сибирских охотников" width="60px" height="60px">
+                                                </a>
+                                                <h3 class="b-widget-blogs-list-item-name g-color-black">
+                                                    <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/">
+                                                        <span>Иван Попов</span>
+                                                        <span></span>
+                                                    </a>
+                                                </h3>
+                                            </header>
+                                            <article class="b-widget-blogs-list-item-article g-all-block-list-item">
+                                                <h4 class="b-widget-blogs-list-item-title g-color-black">
+                                                    <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/1378/">
+                                                        Общество сибирских охотников
+                                                    </a>
+                                                </h4>
+                                                <p class="b-widget-blogs-list-item-caption">150 лет со дня основания</p>
+                                                <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/1378/"
+                                                    class="g-all-block-link"></a>
+                                            </article>
+
+                                        </li>
+
+                                        <li class="b-widget-blogs-list-item g-indent">
+                                            <header class="b-widget-blogs-list-item-header">
+
+                                                <a href="https://www.irk.ru/news/blogs/Fefelov/"
+                                                    class="b-widget-blogs-list-item-avatar-container">
+                                                    <img src="list_news_files/64659116-6caa-4b85-958f-07f0067b4021_jpg_60x60_crop_q85.jpg"
+                                                        alt="Начинаем следить за миграциями водных птиц!" width="60px"
+                                                        height="60px">
+                                                </a>
+                                                <h3 class="b-widget-blogs-list-item-name g-color-black">
+                                                    <a href="https://www.irk.ru/news/blogs/Fefelov/">
+                                                        <span>Игорь</span>
+                                                        <span>Фефелов</span>
+                                                    </a>
+                                                </h3>
+                                            </header>
+                                            <article class="b-widget-blogs-list-item-article g-all-block-list-item">
+                                                <h4 class="b-widget-blogs-list-item-title g-color-black">
+                                                    <a href="https://www.irk.ru/news/blogs/Fefelov/1377/">
+                                                        Начинаем следить за миграциями водных птиц!
+                                                    </a>
+                                                </h4>
+                                                <p class="b-widget-blogs-list-item-caption">Вот теперь и узнаем, кто
+                                                    куда полетит…</p>
+                                                <a href="https://www.irk.ru/news/blogs/Fefelov/1377/"
+                                                    class="g-all-block-link"></a>
+                                            </article>
+
+                                            <a href="https://www.irk.ru/news/blogs/Fefelov/1377/#comments"
+                                                class="b-widget-blogs-list-item-comments">3 отзыва</a>
+
+                                        </li>
+
+                                    </ul>
+
+
+
+
+                                    <div class="g-aside-block g-bordered b-igrajdanin-aside-container">
+                                        <a class="b-igrajdanin-aside-logo" href="https://igrajdanin.ru/"><img
+                                                src="list_news_files/igrajdanin_002.png"
+                                                srcset="list_news_files/igrajdanin2x.png 2x" alt="Я гражданин"></a>
+                                        <h4 class="b-igrajdanin-aside-text">
+                                            Составьте свою карту главных городских проблем, обратите
+                                            внимание властей и других горожан — вместе мы можем всё исправить.
+                                        </h4>
+                                        <div class="b-igrajdanin-aside-footer">
+                                            <a href="https://www.irk.ru/igrajdanin/"
+                                                class="b-igrajdanin-aside-button">Сообщить о проблеме</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </div>
+                    </div>
+                    <aside class="grid-list__item grid-list__item_aside grid-list__item_aside_hide-900 j-sticky-wrapper"
+                        style="position: relative;">
+                        <div
+                            class="j-transform-container j-transform-container-main-mobile_768 j-transform-container-main-desktop">
+                        </div>
+                        <section class="b-widget-list-bordered j-show-main-container g-aside-block g-indent j-transform"
+                            data-transform-target="main">
+                            <header class="b-widget-list-bordered-header">
+                                <h3>Главное</h3>
+                            </header>
+                            <ul class="b-list-v b-widget-list-bordered-container">
+
+                                <li class="b-widget-list-bordered-container__item">
+                                    <h4 class="b-widget-list-bordered-container__title">
+                                        <a class="b-widget-list-bordered-container__link"
+                                            href="https://www.irk.ru/news/20210803/bear/">В Усть-Удинском районе медведь
+                                            напал на лесников</a>
+                                    </h4>
+                                    <time class="b-widget-list-bordered-container__time" datetime="2021-08-03 11:27">
+                                        11:27</time>
+                                    <a href="https://www.irk.ru/news/20210803/bear/#comments"
+                                        class="b-widget-list-bordered-container__comments"><span>
+                                            40&nbsp;отзывов
+                                        </span></a>
+                                </li>
+
+                                <li class="b-widget-list-bordered-container__item">
+                                    <h4 class="b-widget-list-bordered-container__title">
+                                        <a class="b-widget-list-bordered-container__link"
+                                            href="https://www.irk.ru/news/20210803/rate/">В двенадцати реках Иркутской
+                                            области поднялся уровень воды из-за дождей</a>
+                                    </h4>
+                                    <time class="b-widget-list-bordered-container__time" datetime="2021-08-03 11:00">
+                                        11:00</time>
+
+                                    <a href="https://www.irk.ru/news/20210803/rate/#comments"
+                                        class="b-widget-list-bordered-container__comments"><span>
+                                            17&nbsp;отзывов
+                                        </span></a>
+                                </li>
+
+                                <li class="b-widget-list-bordered-container__item g-last">
+                                    <h4 class="b-widget-list-bordered-container__title">
+                                        <a class="b-widget-list-bordered-container__link"
+                                            href="https://www.irk.ru/news/20210803/drugs/">В Куйтуне полицейские изъяли
+                                            у наркосбытчицы 148 свертков с героином</a>
+                                    </h4>
+                                    <time class="b-widget-list-bordered-container__time" datetime="2021-08-03 10:41">
+                                        10:41</time>
+
+                                    <a href="https://www.irk.ru/news/20210803/drugs/#comments"
+                                        class="b-widget-list-bordered-container__comments"><span>
+
+                                            37&nbsp;отзывов
+
+                                        </span></a>
+
+                                </li>
+
+                            </ul>
+                        </section>
+
+
+
+
+
+
+                        <div
+                            class="b-banners-adaptive_320x320-container g-margin-bottom-20 g-mobile_320 g-mobile_480 g-mobile_768">
+                            <div class="b-banners-adaptive_320x320 g-height-auto">
+                                <div class="targetix-banner criteo" id="banner_place_559" data-engaged="false">
+                                    <!-- формат 300x250 по странице -->
+                                    <div id="lx_640242" data-cnt="1" class="__lxG__multi __lxG__multi_lx_640242"></div>
+                                    <script class="__lxGc__" type="text/javascript" data-cnt="1">
+                                        ((__lxGc__ = window.__lxGc__ || { 's': {}, 'b': 0 })['s']['_210163'] = __lxGc__['s']['_210163'] || { 'b': {} })['b']['_640242'] = { 'i': __lxGc__.b++ };
+                                    </script>
+
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            var $banner = $('#banner_place_' + 559),
+                                                $bannerContainer = $banner.parent();
+                                            if ($bannerContainer.hasClass('j-float-block')) {
+                                                $bannerContainer.addClass('g-mobile_320 criteo').show();
+                                            } else {
+                                                $banner.addClass('criteo');
+                                            }
+                                        });
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <section class="b-widget-list-cite g-aside-block">
+                            <h3 class="g-hide"><a href="https://www.irk.ru/news/flash/" class="g-title-link">Народные
+                                    новости</a></h3>
+
+                            <ul>
+
+                                <li class="b-widget-list-cite-item">
+                                    <a href="https://www.irk.ru/news/flash/34318/"
+                                        class="g-hover b-widget-list-cite-item-balloon g-block">
+
+
+                                        <div class="b-widget-list-cite-item-preview-video icon-block icon-video">
+                                            <img src="list_news_files/getvideopreviewid1603518139093id_KUc7fC0_260x96_q85.jpg"
+                                                width="112px" height="96px">
+                                        </div>
+
+                                        <q class="g-clear-left">#моментдтп #дтп
+                                            <div class="article-element article-element_wide">
+                                                <div class="g-video"><iframe src="list_news_files/video_ext.html"
+                                                        width="100%" height="100%" frameborder="0"></iframe></div>
+                                            </div>
+                                        </q>
+                                    </a>
+                                    <a href="https://www.irk.ru/news/flash/">народные новости</a>
+                                    <time class="g-color-gray" datetime="2021-08-04 11:39">4 августа 11:39</time>
+
+
+                                </li>
+
+                            </ul>
+                        </section>
+
+
+
+
+
+                        <section class="b-news-aside-article-list g-aside-block">
+                            <h3 class="g-hide">Материалы</h3>
+                            <ul>
+
+                                <li class="g-indent">
+
+
+
+
+
+                                    <article class="b-widget-material
+        
+        
+        
+        ">
+                                        <header class="b-widget-material-header">
+                                            <a href="https://www.irk.ru/news/articles/20210728/crash/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_index_top5">
+
+
+                                                <figure class="b-widget-material-figure">
+
+
+
+                                                    <img alt="Обзор ДТП: два погибших ребенка и смертельное столкновение мотоциклов"
+                                                        class="b-widget-material-image"
+                                                        src="list_news_files/1b09b08a-eae6-4a94-aeeb-9e73f9bb0e02_jpg_300x132_crop_q85.jpg"
+                                                        width="300" height="132">
+
+
+
+
+                                                </figure>
+
+
+                                                <h4 class="b-widget-material-title">Обзор ДТП: два погибших ребенка и
+                                                    смертельное столкновение мотоциклов</h4>
+                                            </a>
+                                        </header>
+
+
+
+
+                                        <a href="https://www.irk.ru/news/articles/20210728/crash/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_index_top5"></a>
+
+                                        <span class="j-metrika-goal" data-metrika-goal="news_index_top5">
+                                            <a href="https://www.irk.ru/news/articles/20210728/crash/#comments"
+                                                class="b-widget-material__comments">
+
+                                                4&nbsp;отзыва
+
+                                            </a>
+
+                                        </span>
+
+
+
+                                    </article>
+
+
+                                </li>
+
+
+                                <li class="g-indent">
+
+
+
+
+
+                                    <article class="b-widget-material
+        
+        
+        
+        ">
+                                        <header class="b-widget-material-header">
+                                            <a href="https://www.irk.ru/news/articles/20210709/scooter/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_index_top5">
+
+
+                                                <figure class="b-widget-material-figure">
+
+
+
+                                                    <img alt="Электросамокаты в Иркутске: за и против"
+                                                        class="b-widget-material-image"
+                                                        src="list_news_files/cde6e24c-95ae-4997-b754-36916b28f473_jpeg_300x132_crop_q85.jpg"
+                                                        width="300" height="132">
+
+
+
+
+                                                </figure>
+
+
+                                                <h4 class="b-widget-material-title">Электросамокаты в Иркутске: за и
+                                                    против</h4>
+                                            </a>
+                                        </header>
+
+
+                                        <p class="b-widget-material-caption">Как пешеходы и водители относятся к
+                                            кикшерингу — в материале IRK.ru.</p>
+
+
+
+                                        <a href="https://www.irk.ru/news/articles/20210709/scooter/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_index_top5"></a>
+
+                                        <span class="j-metrika-goal" data-metrika-goal="news_index_top5">
+                                            <a href="https://www.irk.ru/news/articles/20210709/scooter/#comments"
+                                                class="b-widget-material__comments">
+
+                                                51&nbsp;отзыв
+
+                                            </a>
+
+                                        </span>
+
+
+
+                                    </article>
+
+
+                                </li>
+
+                                <li>
+
+
+
+
+                                    <section class="g-aside-block g-desktop">
+                                        <div>
+                                            <div id="banner_place_459"
+                                                class="ad-block g-relative g-desktop g-mobile_960 j-banner-459"
+                                                style="height:250px;"><img src="list_news_files/a.gif" alt=""
+                                                    class="auditPixel"
+                                                    style="width:1px !important;height:1px !important;"><a
+                                                    href="https://www.irk.ru/ibr/shelk/11486/13258/?banner=11486&amp;stat=13258"
+                                                    target="_blank" rel="nofollow"><img
+                                                        src="list_news_files/bd178dc2-3edb-4134-a237-56250f7965d4.jpg"
+                                                        alt="" title="" width="280" height="250"></a><img
+                                                    src="list_news_files/a_002.gif" alt=""
+                                                    class="auditPixel j-banner-auditpixel"
+                                                    style="width:1px !important;height:1px !important;"></div>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    var $bannerPlace = $('#banner_place_' + 459);
+
+                                                    if ($bannerPlace.data('egaged') !== true) {
+                                                        $bannerPlace.data('egaged', true);
+
+                                                        var timeStamp = new Date().getTime();
+                                                        var irkAdaptive = window.irk.adaptive,
+                                                            type = '',
+                                                            loaded = false,
+                                                            loadBanner = function () {
+                                                                if (window.irk.vars.$html.hasClass('Chrome') || $.browser.safari) {
+
+
+                                                                    type = 'type=html5'
+                                                                }
+                                                                yepnope.injectJs('/ibr/block/459-1628048455.js?' + type,
+                                                                    function (e) {
+                                                                        irk.vars.$body.triggerHandler('loaded.irk-banners');
+                                                                    });
+                                                                loaded = true;
+                                                            };
+
+                                                        if (typeof irkAdaptive == 'undefined' || irkAdaptive.transform.activeMode === 'desktop' || irkAdaptive.transform.activeMode === 'mobile_960') {
+                                                            loadBanner();
+                                                        } else {
+                                                            window.irk.vars.$body.on('change-mode.irk-adaptive-transform', function (e, mode) {
+                                                                if (loaded === false && mode === 'desktop') {
+                                                                    loadBanner();
+                                                                }
+                                                            });
+                                                        }
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                    </section>
+
+
+                                </li>
+
+
+                                <li class="g-indent">
+
+
+
+
+
+                                    <article class="b-widget-material
+        
+        
+        
+        ">
+                                        <header class="b-widget-material-header">
+                                            <a href="https://www.irk.ru/news/articles/20210802/discussion/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_index_top5">
+
+
+                                                <figure class="b-widget-material-figure">
+
+
+
+                                                    <img alt="Специалисты обсудили текущую гидрологическую обстановку на Байкале"
+                                                        class="b-widget-material-image"
+                                                        src="list_news_files/80ccbac6-5205-4fe2-a8a8-56b229d83c69_jpg_300x132_crop_q85.jpg"
+                                                        width="300" height="132">
+
+
+
+
+                                                </figure>
+
+
+                                                <h4 class="b-widget-material-title">Специалисты обсудили текущую
+                                                    гидрологическую обстановку на Байкале</h4>
+                                            </a>
+                                        </header>
+
+
+
+
+                                        <a href="https://www.irk.ru/news/articles/20210802/discussion/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_index_top5"></a>
+
+                                        <span class="j-metrika-goal" data-metrika-goal="news_index_top5">
+
+
+                                        </span>
+
+
+
+                                    </article>
+
+
+                                </li>
+
+
+                                <li class="g-indent">
+
+
+
+
+
+                                    <article class="b-widget-material
+        
+        
+        
+        ">
+                                        <header class="b-widget-material-header">
+                                            <a href="https://www.irk.ru/news/articles/20210729/government/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_index_top5">
+
+
+                                                <figure class="b-widget-material-figure">
+
+
+
+                                                    <img alt="Михаил Мишустин осмотрел строящийся медицинский центр во Втором Иркутске"
+                                                        class="b-widget-material-image"
+                                                        src="list_news_files/5b0ab7ea-89eb-4408-8af6-80a13a96891b_jpg_300x132_crop_q85.jpg"
+                                                        width="300" height="132">
+
+
+
+
+                                                </figure>
+
+
+                                                <h4 class="b-widget-material-title">Михаил Мишустин осмотрел строящийся
+                                                    медицинский центр во Втором Иркутске</h4>
+                                            </a>
+                                        </header>
+
+
+
+
+                                        <a href="https://www.irk.ru/news/articles/20210729/government/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_index_top5"></a>
+
+                                        <span class="j-metrika-goal" data-metrika-goal="news_index_top5">
+                                            <a href="https://www.irk.ru/news/articles/20210729/government/#comments"
+                                                class="b-widget-material__comments">
+
+                                                22&nbsp;отзыва
+
+                                            </a>
+
+                                        </span>
+
+
+
+                                    </article>
+
+
+                                </li>
+
+
+                                <li class="g-indent">
+
+
+
+
+
+                                    <article class="b-widget-material
+        
+        
+        
+        ">
+                                        <header class="b-widget-material-header">
+                                            <a href="https://www.irk.ru/news/articles/20210719/microdistrict/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_index_top5">
+
+
+                                                <figure class="b-widget-material-figure">
+
+
+
+                                                    <img alt="Жители микрорайона «Лесной» могут лишиться своих домов и участков"
+                                                        class="b-widget-material-image"
+                                                        src="list_news_files/2a4ade98-cfad-4dce-8d2e-6513c0feb813_jpg_300x132_crop_q85.jpg"
+                                                        width="300" height="132">
+
+
+
+
+                                                </figure>
+
+
+                                                <h4 class="b-widget-material-title">Жители микрорайона «Лесной» могут
+                                                    лишиться своих домов и участков</h4>
+                                            </a>
+                                        </header>
+
+
+
+
+                                        <a href="https://www.irk.ru/news/articles/20210719/microdistrict/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_index_top5"></a>
+
+                                        <span class="j-metrika-goal" data-metrika-goal="news_index_top5">
+                                            <a href="https://www.irk.ru/news/articles/20210719/microdistrict/#comments"
+                                                class="b-widget-material__comments">
+
+                                                20&nbsp;отзывов
+
+                                            </a>
+
+                                        </span>
+
+
+
+                                    </article>
+
+
+                                </li>
+
+
+                            </ul>
+                        </section>
+
+
+
+
+
+
+
+                        <h3 class="g-block g-margin-bottom-10 g-color-black"><a
+                                href="https://www.irk.ru/news/blogs/">Блоги</a></h3>
+                        <ul class="b-widget-blogs-list">
+
+                            <li class="b-widget-blogs-list-item g-indent">
+                                <header class="b-widget-blogs-list-item-header">
+
+                                    <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/"
+                                        class="b-widget-blogs-list-item-avatar-container">
+                                        <img src="list_news_files/460b3481-b72d-4973-b1e9-78fffc3bae78_jpg_60x60_crop_q85.jpg"
+                                            alt="Общество сибирских охотников" width="60px" height="60px">
+                                    </a>
+                                    <h3 class="b-widget-blogs-list-item-name g-color-black">
+                                        <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/">
+                                            <span>Иван Попов</span>
+                                            <span></span>
+                                        </a>
+                                    </h3>
+                                </header>
+                                <article class="b-widget-blogs-list-item-article g-all-block-list-item">
+                                    <h4 class="b-widget-blogs-list-item-title g-color-black">
+                                        <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/1378/">
+                                            Общество сибирских охотников
+                                        </a>
+                                    </h4>
+                                    <p class="b-widget-blogs-list-item-caption">150 лет со дня основания</p>
+                                    <a href="https://www.irk.ru/news/blogs/irk-1522826645.94/1378/"
+                                        class="g-all-block-link"></a>
+                                </article>
+
+                            </li>
+
+                            <li class="b-widget-blogs-list-item g-indent">
+                                <header class="b-widget-blogs-list-item-header">
+
+                                    <a href="https://www.irk.ru/news/blogs/Fefelov/"
+                                        class="b-widget-blogs-list-item-avatar-container">
+                                        <img src="list_news_files/64659116-6caa-4b85-958f-07f0067b4021_jpg_60x60_crop_q85.jpg"
+                                            alt="Начинаем следить за миграциями водных птиц!" width="60px"
+                                            height="60px">
+                                    </a>
+                                    <h3 class="b-widget-blogs-list-item-name g-color-black">
+                                        <a href="https://www.irk.ru/news/blogs/Fefelov/">
+                                            <span>Игорь</span>
+                                            <span>Фефелов</span>
+                                        </a>
+                                    </h3>
+                                </header>
+                                <article class="b-widget-blogs-list-item-article g-all-block-list-item">
+                                    <h4 class="b-widget-blogs-list-item-title g-color-black">
+                                        <a href="https://www.irk.ru/news/blogs/Fefelov/1377/">
+                                            Начинаем следить за миграциями водных птиц!
+                                        </a>
+                                    </h4>
+                                    <p class="b-widget-blogs-list-item-caption">Вот теперь и узнаем, кто куда полетит…
+                                    </p>
+                                    <a href="https://www.irk.ru/news/blogs/Fefelov/1377/" class="g-all-block-link"></a>
+                                </article>
+
+                                <a href="https://www.irk.ru/news/blogs/Fefelov/1377/#comments"
+                                    class="b-widget-blogs-list-item-comments">3 отзыва</a>
+
+                            </li>
+
+                        </ul>
+
+
+
+
+                        <div class="g-aside-block g-bordered b-igrajdanin-aside-container">
+                            <a class="b-igrajdanin-aside-logo" href="https://igrajdanin.ru/"><img
+                                    src="list_news_files/igrajdanin_002.png"
+                                    srcset="list_news_files/igrajdanin2x.png 2x" alt="Я гражданин"></a>
+                            <h4 class="b-igrajdanin-aside-text">
+                                Составьте свою карту главных городских проблем, обратите
+                                внимание властей и других горожан — вместе мы можем всё исправить.
+                            </h4>
+                            <div class="b-igrajdanin-aside-footer">
+                                <a href="https://www.irk.ru/igrajdanin/" class="b-igrajdanin-aside-button">Сообщить о
+                                    проблеме</a>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </aside>
+                </div>
+            </div>
+
+
+            <div class="g-clear"></div>
+
+
+
+
+
+            <section class="b-widget-article-list g-content-block j-article-scrollDepth-end">
+                <h3 class="g-title-noborder">Истории, которые нельзя пропустить</h3>
+                <ul id="news-extra-materials">
+
+
+
+
+                    <li class="double">
+
+
+                        <article class="b-widget-article-double">
+                            <a href="https://www.irk.ru/news/articles/20210729/paint/" class="b-widget-article-double-link
+            j-metrika-goal
+            
+            
+            " data-metrika-goal="news_more_articles">
+
+
+                                <img alt="Поликарп Судомойкин ищет приют для красавиц"
+                                    src="list_news_files/816064aa-2eab-497c-a427-c9fed896c86b_jpg_620x250_crop_q85.jpg">
+
+                                <section>
+                                    <header>
+
+                                        <h4>Поликарп Судомойкин ищет приют для красавиц</h4>
+                                    </header>
+                                    <p>Дед Поликарп — о таланте писать картины в жанре ню.</p>
+                                </section>
+                            </a>
+                            <footer>
+                                <span class="j-metrika-goal 
+                 " data-metrika-goal="news_more_articles">
+                                    <a href="https://www.irk.ru/news/articles/20210729/paint/#comments"
+                                        class="b-widget-article-double__comments">
+
+                                        11&nbsp;отзывов
+
+                                    </a>
+
+                                </span>
+                            </footer>
+                        </article>
+
+                    </li>
+
+
+
+                    <li class="double">
+
+
+                        <article class="b-widget-article-double">
+                            <a href="https://www.irk.ru/tourism/blog/20210727/monastery/" class="b-widget-article-double-link
+            j-metrika-goal
+            
+            
+            " data-metrika-goal="news_more_articles">
+
+
+                                <img alt="Жизнь за стенами женского монастыря"
+                                    src="list_news_files/50d018f7-6ec6-4de5-8663-3997bbc9f4fd_jpg_620x250_crop_q85.jpg">
+
+                                <section>
+                                    <header>
+
+                                        <h4>Жизнь за стенами женского монастыря</h4>
+                                    </header>
+                                    <p>Как живут монахини, и почему они решили прийти в монастырь.</p>
+                                </section>
+                            </a>
+                            <footer>
+                                <span class="j-metrika-goal 
+                 " data-metrika-goal="news_more_articles">
+                                    <a href="https://www.irk.ru/tourism/blog/20210727/monastery/#comments"
+                                        class="b-widget-article-double__comments">
+
+                                        11&nbsp;отзывов
+
+                                    </a>
+
+                                </span>
+                            </footer>
+                        </article>
+
+                    </li>
+
+
+
+                    <li>
+
+
+
+
+                        <article class="b-widget-material
+        
+        
+        
+        ">
+                            <header class="b-widget-material-header">
+                                <a href="https://www.irk.ru/news/articles/20210802/discussion/" class="b-widget-material-header-link j-metrika-goal 
+                    
+                    " data-metrika-goal="news_more_articles">
+
+
+                                    <figure class="b-widget-material-figure">
+
+
+
+                                        <img alt="Специалисты обсудили текущую гидрологическую обстановку на Байкале"
+                                            class="b-widget-material-image"
+                                            src="list_news_files/80ccbac6-5205-4fe2-a8a8-56b229d83c69_jpg_300x200_q85.jpg"
+                                            width="300" height="142">
+
+
+
+
+                                    </figure>
+
+
+                                    <h4 class="b-widget-material-title">Специалисты обсудили текущую гидрологическую
+                                        обстановку на Байкале</h4>
+                                </a>
+                            </header>
+
+
+
+
+                            <a href="https://www.irk.ru/news/articles/20210802/discussion/" class="b-widget-material-link
+            j-metrika-goal
+            
+            
+            
+            " data-metrika-goal="news_more_articles"></a>
+
+                            <span class="j-metrika-goal" data-metrika-goal="news_more_articles">
+
+
+                            </span>
+
+
+
+                        </article>
+
+                    </li>
+
+
+
+                    <li class="double">
+
+
+                        <article class="b-widget-article-double">
+                            <a href="https://www.irk.ru/news/articles/20210722/finiko/" class="b-widget-article-double-link
+            j-metrika-goal
+            
+            
+            " data-metrika-goal="news_more_articles">
+
+
+                                <img alt="«Финико» всё? Выясняем с кредитным юристом"
+                                    src="list_news_files/21880b12-ac98-4659-b91d-5ad283da6ee3_png_620x250_crop_q85.jpg">
+
+                                <section>
+                                    <header>
+
+                                        <h4>«Финико» всё? Выясняем с кредитным юристом</h4>
+                                    </header>
+                                    <p>Как будут развиваться события в ближайшие месяцы.</p>
+                                </section>
+                            </a>
+                            <footer>
+                                <span class="j-metrika-goal 
+                 " data-metrika-goal="news_more_articles">
+                                    <a href="https://www.irk.ru/news/articles/20210722/finiko/#comments"
+                                        class="b-widget-article-double__comments">
+
+                                        26&nbsp;отзывов
+
+                                    </a>
+
+                                </span>
+                            </footer>
+                        </article>
+
+                    </li>
+
+
+
+                    <li style="max-width:280px">
+
+                        <!-- CLICKIO AdFox unit 666762 -->
+                        <div id="adfox_16022455012554762" class="">
+                            <script async="" src="list_news_files/loader.js"></script>
+                            <script>
+                                (yaads = window.yaads || []).push({
+                                    id: "255697-18",
+                                    render: "#id-255697-18"
+                                });
+                            </script>
+                            <div id="id-255697-18">
+                                <div style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <script>
+                            (function (w, n) {
+                                w[n] = w[n] || [];
+                                w[n].push([{
+                                    ownerId: 257193,
+                                    containerId: 'adfox_16022455012554762',
+                                    params: {
+                                        pp: 'wzz',
+                                        ps: 'djmk',
+                                        p2: 'gqpf'
+                                    }
+                                }, ['desktop', 'tablet',], {
+                                    tabletWidth: 1024,
+                                    phoneWidth: 767,
+                                    isAutoReloads: false
+                                }]);
+                            })(window, 'adfoxAsyncParamsAdaptive');
+                        </script>
+
+                    </li>
+
+
+
+                </ul>
+            </section>
+
+
+
+
+        </article>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <footer class="b-footer j-float-stop-02">
+        <section class="b-footer-container">
+            <nav class="b-footer-nav">
+                <ul class="b-list-h b-footer-nav-icons">
+                    <li><a target="_blank" class="icon fb" href="https://www.facebook.com/tvoyirkutsk"></a></li>
+                    <li><a target="_blank" class="icon vk" href="https://vk.com/tvoy_irkutsk"></a></li>
+                    <li><a target="_blank" class="icon tw" href="https://twitter.com/tvoyirkutsk"></a></li>
+                    <li><a target="_blank" class="icon ig j-ee-pokeball-target"
+                            href="https://instagram.com/tvoyirkutsk/"></a></li>
+                    <li><a class="icon rss" href="https://www.irk.ru/news.rss"></a></li>
+                    <li><a class="icon search j-reveal-button-toggle click" data-target="footer-search" href="#"></a>
+                    </li>
+                </ul>
+                <div class="b-footer-search g-accelerate j-reveal-block-toggle j-reveal-block-toggle-footer-search">
+                    <form action="/news/search/" name="" method="GET"><input name="q" type="text"
+                            class="b-footer-search-input" placeholder="Поиск в новостях"><input type="image"
+                            src="list_news_files/search-input-submit.png" class="b-footer-search-button"><input
+                            type="submit" class="g-hidden"></form>
+                </div>
+                <ul class="b-list-h b-footer-nav-list">
+                    <li><a href="https://www.irk.ru/obed/?tab=critic#article-list">Ресторанный обозреватель</a></li>
+                    <li><a href="https://www.irk.ru/special/club/">Клуб путешественников</a></li>
+                    <li><a href="https://www.irk.ru/irkgidsiberia/">Гид по сибирской кухне</a></li>
+                </ul>
+            </nav>
+            <nav class="b-footer-nav-other g-indent">
+                <ul class="b-list-v">
+                    <li><a href="https://www.irk.ru/about/">Реклама на сайте</a></li>
+                    <li><a href="https://www.irk.ru/about/mediakit/">Аудитория сайта</a></li>
+                </ul>
+                <ul class="b-list-v">
+                    <li><a href="https://www.irk.ru/about/about_us/">О проекте</a></li>
+                    <li><a href="https://www.irk.ru/about/feedback/">Написать редакции</a></li>
+                    <li><a href="https://www.irk.ru/about/vacancy/">Вакансии</a></li>
+                </ul>
+                <ul class="b-list-v">
+                    <li><a href="https://www.irk.ru/recycle/">Экокарта</a></li>
+                    <li><a href="https://www.irk.ru/tourism/avia/">Покупка авиабилетов</a></li>
+                    <li><a href="https://www.irk.ru/tourism/airport/">Онлайн-табло аэропорта</a></li>
+                    <li><a href="https://www.irk.ru/tourism/etrains/">Расписание электричек</a></li>
+                    <li><a href="https://www.irk.ru/tourism/trains/">Расписание поездов</a></li>
+                    <li><a href="https://www.irk.ru/tourism/boats_baikal/">Водный транспорт</a></li>
+                    <li><a href="https://www.irk.ru/news/subscription/">Подписка на новости</a></li>
+                    <li><a href="https://www.irk.ru/special/">Спецпроекты</a></li>
+                </ul>
+            </nav>
+            <div class="b-footer-copy-side">
+                <div class="b-policy-link"><a href="https://www.irk.ru/conf/">Политика конфиденциальности</a></div>
+                <p>Сайт
+                    содержит материалы, охраняемые авторским правом, и&nbsp;средства
+                    индивидуализации (логотипы, фирменные знаки). Использование материалов
+                    сайта в&nbsp;интернете разрешено только с&nbsp;указанием гиперссылки
+                    на&nbsp;сайт&nbsp;www.irk.ru. Использование материалов сайта
+                    в&nbsp;печати, ТВ&nbsp;и&nbsp;радио разрешено только с&nbsp;указанием
+                    названия сайта «Твой&nbsp;Иркутск». К&nbsp;нарушителям данного положения
+                    применяются все меры,
+                    предусмотренные&nbsp;ст.&nbsp;1301&nbsp;ГК&nbsp;РФ.</p>
+            </div>
+            <div class="b-footer-copy">
+                <p>Все
+                    рекламные товары подлежат обязательной сертификации, все услуги -
+                    лицензированию. Редакция не несет ответственности за содержание
+                    рекламных материалов. Реклама изготовлена и размещена на основе
+                    материалов, предоставленных заказчиком. Все рекламные предложения не
+                    являются публичной офертой.</p>
+                <p>На&nbsp;сайте www.irk.ru размещаются
+                    в&nbsp;том числе и&nbsp;материалы от&nbsp;информационного агентства
+                    «Иркутск онлайн» (регистрационный номер СМИ ИА № ФС77-74154
+                    от&nbsp;29&nbsp;октября 2018&nbsp;г., выданное Федеральной службой по
+                    надзору в сфере связи, информационных технологий и массовых
+                    коммуникаций) с&nbsp;соответствующей пометкой. Учредитель&nbsp;— ООО
+                    «Ирк.ру». Главный редактор&nbsp;— Павлова С.В., <a href="mailto:news@irk.ru">news@irk.ru</a>.
+                    <br>
+                    Телефон редакции: <a href="tel:+73952488850">
+                        <nobr>+7 (3952) 48-88-50</nobr>
+                    </a> (доб. 200).
+                </p>
+                <p class="copy">© 2003–2021 Твой Иркутск <img class="age j-ee-pokeball"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAYAAABblxXYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEE5Nzc4RTg4NzQ5MTFFNEI3NjlCMjQ3OTlCRTQxQjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEE5Nzc4RTk4NzQ5MTFFNEI3NjlCMjQ3OTlCRTQxQjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowQTk3NzhFNjg3NDkxMUU0Qjc2OUIyNDc5OUJFNDFCNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowQTk3NzhFNzg3NDkxMUU0Qjc2OUIyNDc5OUJFNDFCNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrmuRb4AAAC1SURBVHjapJKBEcIgDEWRDboCKzALruAIOEJX0BFYoR3BjmBHsCPEYOP5TQF757t7V8hdQkKxRGTAnlY8xPL6Rh8uKmcjbhIkYtE7bYmtotasDGxgF/ONZx07sQf2CPE3kSXJf5GLdrI+saMqOsNBHcQn00K1ngrjB/ZRGD1RmWTNb7x0eYVx/T+dBtWdl/0AOVFiQf+oGk59F9Ht6bR2P6ES7/c8qRqjvIoZYvluz62kpwADAGzJdk+X/nvgAAAAAElFTkSuQmCC"
+                        title="18+" alt="18+"></p>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="overLayout" class="fixed">
+        <div id="overlayPhotoAll">
+            <div class="controlLeft blockHeight"></div>
+            <div class="controlRight blockHeight"></div>
+            <div id="overlayPhotoAfter"></div>
+            <div id="overlayPhoto" class="logicBlockOver">
+                <div class="headerLine">
+                    <div class="infoLine">Фотография&nbsp;<span id="overlayPhotoNumNow"></span>&nbsp;из&nbsp;<span
+                            id="overlayPhotoNumTotal"></span></div>
+                    <div class="linkClose"><a href="#">Закрыть</a></div>
+                </div>
+
+                <div id="overlayPhotoBlock" class="containerContent">
+                    <div id="overlayPhotoContainer" class="containerPhoto">
+                        <div class="containerPhotoAlt">
+                            <img id="overlayPhotoImg" src="list_news_files/px.gif">
+                            <div id="overlayPhotoAlt"></div>
+                        </div>
+                    </div>
+                    <div class="containerPreviews"></div>
+                    <div class="containerInfo">Закрыть окно можно: нажав Esc на клавиатуре либо в любом свободном от
+                        окна месте экрана</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-map-layer" style="display: none;">
+        <div class="close"></div>
+        <div class="b-map-layer-container">
+            <div class="hint">
+                <p></p>
+                <div class="close"></div>
+            </div>
+            <div id="id_address_map" style="width: 100%; height: 100%;"></div>
+        </div>
+    </div>
+
+
+    <div id="fon"></div>
+    <div class="b-single-layer j-single-layer j-single-layer-close">
+        <div class="b-single-layer-container g-relative">
+            <a class="g-close j-single-layer-close"></a>
+            <div class="b-single-layer-content j-single-layer-content"></div>
+        </div>
+    </div>
+
+
+    <div class="b-afisha-ticket-overlay-container j-afisha-cinema-ticket-overlay-container g-hidden g-opacity-hide"
+        data-rambler-lib="https://static.irk.ru/static/js/lib/rambler.TicketManager.js">
+        <div class="b-afisha-ticket-overlay-close j-afisha-cinema-ticket-overlay-close"></div>
+        <div class="b-afisha-ticket-overlay j-afisha-ticket-overlay j-datecontainer-data"
+            data-datecontainer-sked="j-cinema-sked-overlay"></div>
+    </div>
+
+
+    <div id="shadow_layer" style="display: none;">
+        <div class="shadow-block skin">
+            <div class="f_tt"></div>
+            <div class="f_r">
+                <div class="f_rr"></div>
+                <div class="f_b">
+                    <div class="f_bb">
+                        <div></div>
+                    </div>
+                    <div class="f_l">
+                        <div class="f_ll">
+                            <div></div>
+                        </div>
+                        <div class="f_c">
+                            <div class="close"><a id="close_button"><img src="list_news_files/close-big.png"
+                                        alt="закрыть" title="закрыть"></a></div>
+                            <div class="body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        new Image().src = "//counter.yadro.ru/hit?r" +
+            escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+                ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                    screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+            ";" + Math.random();//-->
+    </script><iframe src="list_news_files/container.html" style="visibility: hidden; display: none;"></iframe>
+
+
+
+
+    <iframe src="list_news_files/syncframe.html" id="criteo-syncframe" style="display: none;"></iframe><iframe
+        src="list_news_files/aframe.html" style="display: none;" width="0" height="0"></iframe>
+    <div style="position: fixed; left: -99px;">
+        <div id="4e14b371eb"><iframe scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1"
+                marginwidth="0" marginheight="0" style="opacity: 1;" src="list_news_files/render.html" id="id605"
+                frameborder="no"></iframe></div>
+    </div>
+</body><iframe sandbox="allow-scripts allow-same-origin" id="193895cf00e387" allowtransparency="true" marginheight="0"
+    marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no"
+    src="list_news_files/async_usersync.html" width="0" height="0" frameborder="0">
+</iframe><iframe sandbox="allow-scripts allow-same-origin" id="20adb72f2736144" allowtransparency="true"
+    marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no"
+    src="https://ads.betweendigital.com/sspmatch-iframe" width="0" height="0" frameborder="0">
+</iframe><iframe sandbox="allow-scripts allow-same-origin" id="21f565790af1191" allowtransparency="true"
+    marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no"
+    src="list_news_files/usync.html" width="0" height="0" frameborder="0">
+</iframe><iframe sandbox="allow-scripts allow-same-origin" id="22dbb679aff52158" allowtransparency="true"
+    marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no"
+    src="https://u.openx.net/w/1.0/pd" width="0" height="0" frameborder="0">
+</iframe>
+
+</html>

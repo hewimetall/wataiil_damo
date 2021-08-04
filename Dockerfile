@@ -70,4 +70,4 @@ RUN python manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD python manage.py runserver 0.0.0.0:8080
+CMD python manage.py runserver 0.0.0.0:8000
