@@ -1,0 +1,19 @@
+{% load static wagtailcore_tags blogapp_tags wagtailmarkdown%}
+
+{% with blocks=page.body %}
+  {% for block in blocks %}
+    {% if block.block_type == 'h2' %}
+    <p></p>
+      <h2>{{ block.value }}</h2>
+    <p></p>
+    {% elif block.block_type == 'paragraph' %}
+      {{ block.value|richtext }}
+    {% elif block.block_type == 'image' %}
+      {% include 'blog/blocks/old_image_text.html' with block=block only %}
+    {% elif block.block_type == 'markdown' %}
+      {{ block.value|markdown|safe }}
+    {% else %}
+        {{ block }}
+    {% endif %}
+  {% endfor %}
+{% endwith %}

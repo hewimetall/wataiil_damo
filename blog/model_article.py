@@ -29,7 +29,7 @@ from wagtail.search import index
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtailcaptcha.models import WagtailCaptchaEmailForm
 from wagtailmetadata.models import MetadataPageMixin
-from .blocks import BodyBlock
+from .blocks import OldBodyBlock
 from wagtail.admin.edit_handlers import HelpPanel
 
 from wagtail.contrib.table_block.blocks import TableBlock
@@ -169,7 +169,7 @@ class BlogArticlePage(RoutablePageMixin, Page):
         verbose_name="Время создания",help_text='Время отображаемое на сайте', default=datetime.datetime.today
     )
 
-    body = StreamField(BodyBlock(), blank=True, verbose_name='Контент на странице')
+    body = StreamField(OldBodyBlock(), blank=True, verbose_name='Контент на странице')
 
     is_recl_0 = models.BooleanField(verbose_name='Не выводится в Яндекс.новостях', default=False)
     is_recl_1 = models.BooleanField(verbose_name='Не выводить на главной', default=False)

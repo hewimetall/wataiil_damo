@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<h2> crop </h2>
+{% image block.value fill-805x1000-c12 as img %}
+<figure class="article-image"><img src="{{ img.url }}" alt="{{ block.value.caption }}" title="{{ block.value.caption }}" width="805" height="537"><figcaption> {{ block.value.caption }} </figcaption></figure>
+
+<h2> width </h2>
+{% image block.value width-800 as img %}
+<figure class="article-image"><img src="{{ img.url }}" alt="{{ block.value.caption }}" title="{{ block.value.caption }}" width="805" height="537"><figcaption> {{ block.value.caption }} </figcaption></figure>
+
+<h2> origin </h2>
+{% image block.value original  as img %}
+<figure class="article-image"><img src="{{ img.url }}" alt="{{ block.value.caption }}" title="{{ block.value.caption }}" width="805" height="537"><figcaption> {{ block.value.caption }} </figcaption></figure>

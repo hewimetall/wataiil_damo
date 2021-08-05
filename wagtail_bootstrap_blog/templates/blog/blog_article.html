@@ -1,4 +1,4 @@
-
+{% load static wagtailuserbar %}
 
 <!DOCTYPE html>
 <html class="j-toggle-target-bodyhide" data-toggle-class="b-main-menu-opened">
@@ -948,23 +948,11 @@
                   </div>
                </div>
                <div class="article__content j-banners-article-text j-copyright-insert j-article-scrollDepth-start_read j-article-scrollDepth-read_time " data-url="http://www.irk.ru/news/articles/20210804/garbage/">
-                {% include "blog/components/streamfield.html" %}
-
+<div class="article__content j-banners-article-text j-copyright-insert j-article-scrollDepth-start_read j-article-scrollDepth-read_time " data-url="http://www.irk.ru/news/articles/20210805/children/">
+                                                {% include "blog/components/streamfield_old.html" %}
+                                <div class="j-article-scrollDepth-point_3"></div>
+                            </div>
             </div>
-               <div class="article__footer j-article-scrollDepth-point_4">
-                  <div class="article__inner article__inner_column">
-                     <div class="article__misprint g-not-mobile">
-                        <p>
-                           Чтобы сообщить об опечатке, выделите текст и нажмите <kbd>Ctrl</kbd>+<kbd>Enter</kbd>
-                        </p>
-                        <script type="text/javascript">
-                           $(document).ready(function () {
-                               window.irk.misprintEngine.init();
-                           });
-                        </script>
-                     </div>
-                  </div>
-               </div>
                <div class="article__comments">
                   <div class="article__inner article__inner_column">
                      <!--comments-->
@@ -1288,6 +1276,8 @@
             </div>
          </div>
       </div>
+      {% wagtailuserbar %}
+
       <script type="text/javascript">
          new Image().src = "//counter.yadro.ru/hit?r"+
          escape(document.referrer)+((typeof(screen)=="undefined")?"":

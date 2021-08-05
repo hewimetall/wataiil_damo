@@ -30,3 +30,11 @@ class BodyBlock(StreamBlock):
     image_carousel = ListBlock(ImageChooserBlock(label="Изображения"), label="Карусель")
     thumbnail_gallery = ListBlock(ImageChooserBlock(label="Изображения"), label="Миниатюры")
     quote = BlockQuoteBlock(label='Цитата')
+
+class OldBodyBlock(StreamBlock):
+    h2 = CharBlock(label='Загаловок')
+    paragraph = RichTextBlock(label="Параграф")
+    markdown = MarkdownBlock(icon="code")
+    embed = EmbedBlock(label='Внешний контент')
+    image = ImageChooserBlock(label="Изображения")
+    quote = BlockQuoteBlock(label='Цитата')
